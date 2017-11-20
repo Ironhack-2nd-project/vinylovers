@@ -6,3 +6,18 @@ body {
 a {
   color: #00B7FF;
 }
+
+.web-title {
+font-family: 'Shrikhand';
+color: black;
+font-size: 58px;
+}
+
+.background-image {
+  background-image: url('../images/bg-vinylovers.jpg')
+}
+
+.login {
+  text-decoration: none;
+  list-style-type: none;
+}

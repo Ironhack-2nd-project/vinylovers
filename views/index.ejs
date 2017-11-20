@@ -1,13 +1,27 @@
 <!-- <h1><%= title %></h1>
 <p>Welcome to <%= title %></p> -->
-<h1>VINYLOVERS</h1>
 
-<% if(!user){ %>
-  <ul>
-    <li><a href="/auth/login">Login</a></li>
-    <li><a href="/auth/signup">signup</a></li>
-  </ul>
-<% }else{ %>
-    <a href="/marketplace">Market Place </a>
-    <a href="/auth/logout">Logout <%= user.username %></a>
-<% } %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Shrikhand" rel="stylesheet">
+  <link rel="stylesheet" href="stylesheets/style.css">
+  <title>Vinylovers</title>
+</head>
+<body class = "background-image">
+  <h1 class ="web-title">Vinylovers</h1>
+<h2>Welcome to the best exchange for your old-time best records! </h2>
+  <% if(!user){ %>
+    <ul>
+      <li class="login"><a class="login" href="/auth/login">Login</a></li>
+      <li class = 'login'><a class="login" href="/auth/signup">signup</a></li>
+    </ul>
+  <% }else{ %>
+      <a href="/marketplace">Market Place </a>
+      <a href="/auth/logout">Logout <%= user.username %></a>
+  <% } %>
+</body>
+</html>
