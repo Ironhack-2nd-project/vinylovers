@@ -11,61 +11,112 @@ const password = 'vinylovers';
 var encryptedPass = bcrypt.hashSync(password, salt);
 
 const user1 = new User({
+  name: 'Darío',
+  email: 'dario@gmail.com',
+  password: encryptedPass,
+  location: [39.4786079, -0.3221189],
+  imgUrl: 'http://lorempixel.com/200/200/'
+});
+
+const vinyl1 = new Vinyl({
+  albumName: 'Rubber Soul',
+  artistName: 'The Beatles',
+  genre: 'Pop',
+  imgUrl: 'g.discogs.com/fUgSLFA04qPkOWyZMZB9bQPzOmU=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-4816760-1420395068-7023.jpeg.jpg',
+  description: 'Sealed copy of remastered edition',
+  price: 40
+});
+
+User.create(user1)
+  .then(user => {
+    vinyl1.owner = user._id;
+    Vinyl.create(vinyl1)
+    .then(() => mongoose.connection.close())
+  })
+  .catch(err => console.log(err));
+
+const user2 = new User({
+  name: 'Niko',
+  email: 'niko@gmail.com',
+  password: encryptedPass,
+  location: [40.4027785,-3.75404],
+  imgUrl: 'http://lorempixel.com/200/200/'
+});
+
+const vinyl2 = new Vinyl({
+  albumName: 'Sticky Fingers',
+  artistName: 'The Rolling Stones',
+  genre: 'Rock',
+  imgUrl: 'https://img.discogs.com/opltRShfrbknHcmXbOLcf0rU3WU=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-451342-1265844984.jpeg.jpg',
+  description: 'First edition',
+  price: 90
+});
+
+const vinyl3 = new Vinyl({
+  albumName: 'Blue & Lonesome',
+  artistName: 'The Rolling Stones',
+  genre: 'Rock',
+  imgUrl: 'https://img.discogs.com/2Siq-Y4cvleNxC8eFTL9k63qUCE=/fit-in/600x598/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-9437886-1480592395-1641.jpeg.jpg',
+  description: 'First edition',
+  price: 100
+});
+
+User.create(user2)
+  .then(user => {
+    vinyl2.owner = user._id;
+    vinyl3.owner = user._id;
+    Vinyl.create(vinyl2)
+      .then( Vinyl.create(vinyl3)
+          .then(() => mongoose.connection.close()))
+    })
+.catch(err => console.log(err));
+
+const user3 = new User({
+  name: 'Yaiza',
+  email: 'yaiza@gmail.com',
+  password: encryptedPass,
+  location: [41.3851341,2.1679939],
+  imgUrl: 'http://lorempixel.com/200/200/'
+});
+
+const vinyl4 = new Vinyl({
+  albumName: 'Meddle',
+  artistName: 'Pink Floyd',
+  genre: 'Rock',
+  imgUrl: 'https://img.discogs.com/TwWUUEhc7tKdHglqhRJurcY-NDc=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-4491548-1403429581-6990.jpeg.jpg',
+  description: 'Worn copy of limited edition',
+  price: 60
+});
+
+User.create(user3)
+  .then(user => {
+    vinyl4.owner = user._id;
+    Vinyl.create(vinyl4)
+    .then(() => mongoose.connection.close())
+  })
+  .catch(err => console.log(err));
+
+const user4 = new User({
   name: 'Ana',
   email: 'ana@gmail.com',
   password: encryptedPass,
-  location: '',
+  location: [42.5997032,-5.5688593],
   imgUrl: 'http://lorempixel.com/200/200/'
 });
-const courses = [
-  {
-    name: 'Introduction to Ruby on Rails',
-    startingDate: new Date('2017-03-01'),
-    endDate: new Date('2017-04-01'),
-    level: 'Beginner',
-    available: true
-  },
-  {
-    name: 'Ruby on Rails Advanced',
-    startingDate: new Date('2017-02-01'),
-    endDate: new Date('2017-03-27'),
-    level: 'Advanced',
-    available: true
-  },
-  {
-    name: 'Angular 2',
-    startingDate: new Date('2017-04-15'),
-    endDate: new Date('2017-06-30'),
-    level: 'Advanced',
-    available: true
-  },
-  {
-    name: 'MongoDB',
-    startingDate: new Date('2017-04-04'),
-    endDate: new Date('2017-05-04'),
-    level: 'Advanced',
-    available: true
-  },
-  {
-    name: 'Express Introduction',
-    startingDate: new Date('2017-03-01'),
-    endDate: new Date('2017-04-01'),
-    level: 'Beginner',
-    available: true
-  },
-];
 
-User.create(boss, (err, user) => {
-  if (err) {
-    throw err;
-  }
-  console.log(user);
+const vinyl5 = new Vinyl({
+  albumName: 'Meddle',
+  artistName: 'Pink Floyd',
+  genre: 'Rock',
+  imgUrl: 'https://img.discogs.com/TwWUUEhc7tKdHglqhRJurcY-NDc=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-4491548-1403429581-6990.jpeg.jpg',
+  description: 'Sealed remastered 2010 edition',
+  price: 35
 });
 
-Course.create(courses, (err, docs)=>{
-  if (err) throw err;
-    docs.forEach( (course) => {
-      console.log(course.name);
-    });
-    mongoose.connection.close();
-});
+User.create(user4)
+  .then(user => {
+    vinyl5.owner = user._id;
+    Vinyl.create(vinyl5)
+    .then(() => mongoose.connection.close())
+  })
+  .catch(err => console.log(err));
