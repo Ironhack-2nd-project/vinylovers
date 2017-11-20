@@ -11,7 +11,7 @@ const password = 'vinylovers';
 var encryptedPass = bcrypt.hashSync(password, salt);
 
 const user1 = new User({
-  name: 'Darío',
+  username: 'Darío',
   email: 'dario@gmail.com',
   password: encryptedPass,
   location: [39.4786079, -0.3221189],
@@ -36,7 +36,7 @@ User.create(user1)
   .catch(err => console.log(err));
 
 const user2 = new User({
-  name: 'Niko',
+  username: 'Niko',
   email: 'niko@gmail.com',
   password: encryptedPass,
   location: [40.4027785,-3.75404],
@@ -72,7 +72,7 @@ User.create(user2)
 .catch(err => console.log(err));
 
 const user3 = new User({
-  name: 'Yaiza',
+  username: 'Yaiza',
   email: 'yaiza@gmail.com',
   password: encryptedPass,
   location: [41.3851341,2.1679939],
@@ -97,7 +97,7 @@ User.create(user3)
   .catch(err => console.log(err));
 
 const user4 = new User({
-  name: 'Ana',
+  username: 'Ana',
   email: 'ana@gmail.com',
   password: encryptedPass,
   location: [42.5997032,-5.5688593],
