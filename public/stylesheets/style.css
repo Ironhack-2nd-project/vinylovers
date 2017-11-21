@@ -9,15 +9,34 @@ a {
 
 .web-title {
 font-family: 'Shrikhand';
-color: black;
+color: white;
 font-size: 58px;
+  opacity : 0.5;
 }
 
 .background-image {
-  background-image: url('../images/bg-vinylovers.jpg')
+  background-image: url('../images/bg-vinylovers.jpg');
 }
 
 .login {
   text-decoration: none;
   list-style-type: none;
+}
+
+.web-description {
+font-family: 'Fira Sans', sans-serif;
+color: white;
+opacity: 0.5;
+}
+
+.button {
+  font: bold 11px Arial;
+  text-decoration: none;
+  background-color: #EEEEEE;
+  color: #333333;
+  padding: 2px 6px 2px 6px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
 }
