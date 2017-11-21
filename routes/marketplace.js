@@ -6,10 +6,11 @@ const Vinyl = require ('../models/Vinyl');
 
   router.get('/', function (req, res, next){
     Vinyl.find()
+    .populate('owner', 'username')
     .then (vinyls => {
-      console.log(vinyls)
-      res.render('marketplace', {vinyls})
-    })
+      console.log(vinyls);
+      res.render('marketplace', {vinyls});
+    });
   });
 
 module.exports = router;

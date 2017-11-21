@@ -8,16 +8,24 @@
 </head>
 <body>
   <h1>Market Place</h1>
+
 <ul>
   <% vinyls.forEach((vinyl) => { %>
-    <li><%= vinyl.albumName %>Album:</li>
-    <li><%= vinyl.artistName %>Artist:</li>
+    <div class="album-container">
+      <li>
+        <p>Owner username: <%= vinyl.owner %></p>
+        <p>Album: <%= vinyl.albumName %> by <%= vinyl.artistName %></p>
+
+      </li>
+    </div>
+    <!--
     <li><%= vinyl.genre %>Genre:</li>
     <li><%= vinyl.description %>Description:</li>
     <li><%= vinyl.price %>Price:</li>
     <li><%= vinyl.owner %>Sold by:</li>
-    <!-- <li><%= vinyl.imgUrl %></li> -->
+     <li><%= vinyl.imgUrl %></li> -->
 <% }) %>
 </ul>
+<a href="vinyl/add">Add new vinyl</a>
 </body>
 </html>
