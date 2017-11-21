@@ -15,14 +15,14 @@ const user1 = new User({
   email: 'dario@gmail.com',
   password: encryptedPass,
   location: [39.4786079, -0.3221189],
-  imgUrl: 'http://lorempixel.com/200/200/'
+  imgUrl: 'http://lorempixel.com/100/100/people'
 });
 
 const vinyl1 = new Vinyl({
   albumName: 'Rubber Soul',
   artistName: 'The Beatles',
   genre: 'Pop',
-  imgUrl: 'g.discogs.com/fUgSLFA04qPkOWyZMZB9bQPzOmU=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-4816760-1420395068-7023.jpeg.jpg',
+  imgUrl: 'https://is5-ssl.mzstatic.com/image/thumb/Music/5b/17/1b/mzi.gljnvqzc.tif/600x600bf.jpg',
   description: 'Sealed copy of remastered edition',
   price: 40
 });
@@ -31,7 +31,7 @@ User.create(user1)
   .then(user => {
     vinyl1.owner = user._id;
     Vinyl.create(vinyl1)
-    .then(() => mongoose.connection.close())
+    .then(() => mongoose.connection.close());
   })
   .catch(err => console.log(err));
 
@@ -40,7 +40,7 @@ const user2 = new User({
   email: 'niko@gmail.com',
   password: encryptedPass,
   location: [40.4027785,-3.75404],
-  imgUrl: 'http://lorempixel.com/200/200/'
+  imgUrl: 'http://lorempixel.com/100/100/people'
 });
 
 const vinyl2 = new Vinyl({
@@ -67,7 +67,7 @@ User.create(user2)
     vinyl3.owner = user._id;
     Vinyl.create(vinyl2)
       .then( Vinyl.create(vinyl3)
-          .then(() => mongoose.connection.close()))
+          .then(() => mongoose.connection.close()));
     })
 .catch(err => console.log(err));
 
@@ -76,7 +76,7 @@ const user3 = new User({
   email: 'yaiza@gmail.com',
   password: encryptedPass,
   location: [41.3851341,2.1679939],
-  imgUrl: 'http://lorempixel.com/200/200/'
+  imgUrl: 'http://lorempixel.com/100/100/people'
 });
 
 const vinyl4 = new Vinyl({
@@ -101,7 +101,7 @@ const user4 = new User({
   email: 'ana@gmail.com',
   password: encryptedPass,
   location: [42.5997032,-5.5688593],
-  imgUrl: 'http://lorempixel.com/200/200/'
+  imgUrl: 'http://lorempixel.com/100/100/people'
 });
 
 const vinyl5 = new Vinyl({
@@ -117,6 +117,6 @@ User.create(user4)
   .then(user => {
     vinyl5.owner = user._id;
     Vinyl.create(vinyl5)
-    .then(() => mongoose.connection.close())
+    .then(() => mongoose.connection.close());
   })
   .catch(err => console.log(err));
