@@ -3,7 +3,9 @@ const User = require('../models/User');
 const Vinyl = require ('../models/Vinyl')
 var router = express.Router();
 
-//router.get('vinyl/add')
+  router.get('/vinyl/add', (req, res, next) => {
+    res.render('vinyls/new');
+  });
 
 router.post('/add') (req, res, next) => {
 
