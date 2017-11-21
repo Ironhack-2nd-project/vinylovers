@@ -10,7 +10,13 @@
   <h1>Market Place</h1>
 <ul>
   <% vinyls.forEach((vinyl) => { %>
-    <li><%= vinyl.albumName %></li>
+    <li><%= vinyl.albumName %>Album:</li>
+    <li><%= vinyl.artistName %>Artist:</li>
+    <li><%= vinyl.genre %>Genre:</li>
+    <li><%= vinyl.description %>Description:</li>
+    <li><%= vinyl.price %>Price:</li>
+    <li><%= vinyl.owner %>Sold by:</li>
+    <!-- <li><%= vinyl.imgUrl %></li> -->
 <% }) %>
 </ul>
 </body>
