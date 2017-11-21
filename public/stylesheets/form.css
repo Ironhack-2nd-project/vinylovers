@@ -10,7 +10,7 @@ a {
 .background-image {
   background-image: url('../images/bg-vinylovers.jpg');
 }
-/*#form {
+#form {
   margin: 30px auto;
   width: 380px;
 }
@@ -22,7 +22,7 @@ a {
   text-align: center;
   width: 100%;
 }
-
+/*
 #form input,
 #form button {
   box-sizing: border-box;
@@ -51,4 +51,4 @@ a {
   background: #fff;
   color: #43a3e6;
   transition: .3s ease background;
-}*/
+}*/*/

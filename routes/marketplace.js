@@ -7,8 +7,7 @@ var router = express.Router();
   router.get('/', function (req, res, next){
     Vinyl.find()
     .then (vinyls => {
-      console.log(vinyls)
-      res.render('marketplace', {vinyls:vinyls})
+      res.render('marketplace', {vinyls})
     })
   });
 
