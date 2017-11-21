@@ -1,0 +1,33 @@
+<h2>Add ALbum</h2>
+
+<form action="/vinyl/new" method="POST" id="form-container">
+  <label for="albumName">Album:</label>
+  <input id="albumName" type="text" name="albumName" placeholder="Sticky fingers">
+  <br><br>
+  <label for="artistName">Artist:</label>
+  <input id="artistName" type="text" name="artistName" placeholder="Rolling Stones">
+  <br><br>
+  <label for="genre">Genre:</label>
+  <input id="genre" type="text" name="genre" placeholder="Rock">
+  <br><br>
+  <label for="imgUrl">Genre:</label>
+  <input id="imgUrl" type="image" name="imgUrl" placeholder="image">
+  <br><br>
+  <label for="description">Genre:</label>
+  <input id="description" type="text" name="description" placeholder="New limited edition">
+  <br><br>
+  <label for="genre">Genre:</label>
+  <input id="genre" type="text" name="genre" placeholder="Rock">
+  <br><br>
+  <label for="price">Genre:</label>
+  <input id="price" type="number" name="price" placeholder="20">
+  <br><br>
+
+
+  <% if (typeof message !== "undefined") { %>
+    <div class="error-message"><%= message %></div>
+  <% } %>
+  <br><br>
+
+  </p>
+</form>
