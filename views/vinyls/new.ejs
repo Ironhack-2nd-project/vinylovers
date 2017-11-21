@@ -1,33 +1,45 @@
-<h2>Add Vinyl</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vinylovers</title>
+</head>
+<body>
+  <h2>Add Vinyl</h2>
+  <form action="/vinyl/add" method="POST" id="form-container" enctype="multipart/form-data">
+    <label for="albumName">Album:</label>
+    <input id="albumName" type="text" name="albumName" placeholder="Sticky fingers">
+    <br><br>
+    <label for="artistName">Artist:</label>
+    <input id="artistName" type="text" name="artistName" placeholder="Rolling Stones">
+    <br><br>
+    <label for="genre">Genre:</label>
+    <input id="genre" type="text" name="genre" placeholder="Rock">
+    <br><br>
+    <label for="imgUrl">Image:</label>
+    <input id="imgUrl" type="file" name="imgUrl" placeholder="image">
+    <br><br>
+    <label for="description">Genre:</label>
+    <input id="description" type="text" name="description" placeholder="New limited edition">
+    <br><br>
+    <label for="genre">Genre:</label>
+    <input id="genre" type="text" name="genre" placeholder="Rock">
+    <br><br>
+    <label for="price">Genre:</label>
+    <input id="price" type="number" name="price" placeholder="20">
+    <br><br>
+    <button type="submit">add new vinyl</button>
 
-<form action="/vinyl/new" method="POST" id="form-container">
-  <label for="albumName">Album:</label>
-  <input id="albumName" type="text" name="albumName" placeholder="Sticky fingers">
-  <br><br>
-  <label for="artistName">Artist:</label>
-  <input id="artistName" type="text" name="artistName" placeholder="Rolling Stones">
-  <br><br>
-  <label for="genre">Genre:</label>
-  <input id="genre" type="text" name="genre" placeholder="Rock">
-  <br><br>
-  <label for="imgUrl">Genre:</label>
-  <input id="imgUrl" type="image" name="imgUrl" placeholder="image">
-  <br><br>
-  <label for="description">Genre:</label>
-  <input id="description" type="text" name="description" placeholder="New limited edition">
-  <br><br>
-  <label for="genre">Genre:</label>
-  <input id="genre" type="text" name="genre" placeholder="Rock">
-  <br><br>
-  <label for="price">Genre:</label>
-  <input id="price" type="number" name="price" placeholder="20">
-  <br><br>
-  <button type= "submit">add new vinyl</button>
+    <% if (typeof message !== "undefined") { %>
+      <div class="error-message">
+        <%= message %>
+      </div>
+      <% } %>
+        <br><br>
 
-  <% if (typeof message !== "undefined") { %>
-    <div class="error-message"><%= message %></div>
-  <% } %>
-  <br><br>
-
-  </p>
-</form>
+        </p>
+  </form>
+</body>
+</html>

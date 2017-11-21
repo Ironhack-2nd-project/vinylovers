@@ -1,18 +1,22 @@
-var express = require('express');
+const express = require('express');
 const User = require('../models/User');
 const Vinyl = require('../models/Vinyl')
-var router = express.Router();
+const router = express.Router();
+const multer = require('multer');
+const upload = multer({ dest: './public/uploads/' });
+
 
 router.get('/add', (req, res, next) => {
   res.render('vinyls/new');
 });
 
-router.post('/add', (req, res, next) => {
+router.post('/add', upload.single('imgUrl'),(req, res, next) => {
+  console.log('====' + req.body);
   let vinylinfo = {
     albumName: req.body.albumName,
     artistName: req.body.artistName,
     genre: req.body.genre,
-    imgUrl: req.body.imgUrl,
+    imgUrl: `/uploads/${req.file.filename}`,
     description: req.body.description,
     price: req.body.price,
     owner: req.body.owner,
@@ -31,4 +35,4 @@ router.post('/add', (req, res, next) => {
   });
 });
 
-module.export = router;
+module.exports = router;
