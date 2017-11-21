@@ -14,6 +14,7 @@ const flash = require('connect-flash');
 //require routes
 const index = require('./routes/index');
 const auth = require('./routes/auth');
+const marketplace = require('./routes/marketplace')
 
 const app = express();
 
@@ -57,6 +58,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Use routes
 app.use('/', index);
 app.use ('/auth', auth);
+app.use ('/marketplace', marketplace);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

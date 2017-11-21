@@ -37,7 +37,7 @@ authRoutes.get("/login", (req, res, next) => {
 });
 
 authRoutes.post("/login", passport.authenticate("local", {
-  successRedirect: "/",
+  successRedirect: "/marketplace",
   failureRedirect: "/auth/login",
   failureFlash: true,
   passReqToCallback: true
@@ -72,8 +72,7 @@ authRoutes.post("/signup", (req, res, next) => {
       username,
       email,
       password: hashPass,
-      location,
-      imgUrl
+      // imgUrl: image,
     });
 
     newUser.save((err) => {
