@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="/stylesheets/marketplace.css">
   <title>Vinylovers</title>
 </head>
 <body>
@@ -13,18 +14,19 @@
   <% vinyls.forEach((vinyl) => { %>
     <div class="album-container">
       <li>
-        <p>Owner username: <%= vinyl.owner %></p>
+        <div class="user">
+          <img class="avatar" src="<%= user.imgUrl %>" alt="">
+          <p class="username">Owner username: <%= vinyl.owner %></p>
+        </div>
+        <img src="<%= vinyl.imgUrl %>" alt="Imagen del album">
         <p>Album: <%= vinyl.albumName %> by <%= vinyl.artistName %></p>
-
+        <p>Genres: <%= vinyl.genre %></p>
+        <p>Price: <%= vinyl.price %></p>
+        <button class="btn" type="button" name="button">Buy Vinyl</button>
+        <p>Description: <%= vinyl.description %></p>
       </li>
+      <hr>
     </div>
-    <!--
-    <li><%= vinyl.genre %>Genre:</li>
-    <li><%= vinyl.description %>Description:</li>
-    <li><%= vinyl.price %>Price:</li>
-    <li><%= vinyl.owner %>Sold by:</li>
-<<<<<<< HEAD
-     <li><%= vinyl.imgUrl %></li> -->
 
 <% }) %>
 </ul>

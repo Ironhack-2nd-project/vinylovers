@@ -17,8 +17,7 @@ const index = require('./routes/index');
 const auth = require('./routes/auth');
 const marketplace = require('./routes/marketplace');
 const vinyl = require('./routes/vinyl');
-
-// const user = require('./routes/user');
+const user = require('./routes/user');
 
 const app = express();
 
@@ -64,7 +63,7 @@ app.use('/', index);
 app.use ('/auth', auth);
 app.use ('/marketplace', marketplace);
 app.use('/vinyl', vinyl);
-// app.use('/user',user);
+app.use('/user',user);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
