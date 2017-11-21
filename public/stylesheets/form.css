@@ -1,6 +1,7 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: black;
 }
 
 a {
@@ -16,13 +17,13 @@ a {
 }
 
 #form label {
-  color: #666;
+  color: white;
   display: inline-block;
   margin-bottom: 10px;
   text-align: center;
   width: 100%;
 }
-/*
+
 #form input,
 #form button {
   box-sizing: border-box;
@@ -40,6 +41,7 @@ a {
   cursor: pointer;
   display: inline-block;
   font-size: 14px;
+  margin-top: 1em;
   padding: 8px 16px;
   text-decoration: none;
   text-transform: uppercase;
@@ -51,4 +53,4 @@ a {
   background: #fff;
   color: #43a3e6;
   transition: .3s ease background;
-}*/*/
+}*/

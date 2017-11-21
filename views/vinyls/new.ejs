@@ -1,4 +1,4 @@
-<h2>Add ALbum</h2>
+<h2>Add Vinyl</h2>
 
 <form action="/vinyl/new" method="POST" id="form-container">
   <label for="albumName">Album:</label>
@@ -22,7 +22,7 @@
   <label for="price">Genre:</label>
   <input id="price" type="number" name="price" placeholder="20">
   <br><br>
-
+  <button type= "submit">add new vinyl</button>
 
   <% if (typeof message !== "undefined") { %>
     <div class="error-message"><%= message %></div>

@@ -7,9 +7,9 @@ const Vinyl = require ('../models/Vinyl');
   router.get('/', function (req, res, next){
     Vinyl.find()
     //Necesitamos el nombre del propietario del vinilo, no solo el id
-    .populate('owner', 'username')
+    .populate('owner')
     .then (vinyls => {
-      console.log(vinyls);
+      console.log('AAAAAAAAAA'+vinyls[0]);
       res.render('marketplace', {vinyls});
     });
   });

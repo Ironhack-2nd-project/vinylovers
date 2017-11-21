@@ -14,25 +14,20 @@
   <% vinyls.forEach((vinyl) => { %>
     <div class="album-container">
       <li>
-        <p>Owner username: <%= vinyl.owner %></p>
+        <div class="user">
+          <img class="avatar" src="<%= user.imgUrl %>" alt="">
+          <p class="username">Owner username: <%= vinyl.owner %></p>
+        </div>
         <img src="<%= vinyl.imgUrl %>" alt="Imagen del album">
         <p>Album: <%= vinyl.albumName %> by <%= vinyl.artistName %></p>
         <p>Genres: <%= vinyl.genre %></p>
         <p>Price: <%= vinyl.price %></p>
         <button class="btn" type="button" name="button">Buy Vinyl</button>
         <p>Description: <%= vinyl.description %></p>
-
       </li>
+      <hr>
     </div>
-    <!--
-    <li><%= vinyl.genre %>Genre:</li>
-    <li><%= vinyl.description %>Description:</li>
-    <li><%= vinyl.price %>Price:</li>
-    <li><%= vinyl.owner %>Sold by:</li>
-<<<<<<< HEAD
-     <li><%= vinyl.imgUrl %></li> -->
-=======
->>>>>>> a9292fb873b052c316bfaa4b82cf85efc444a2cc
+
 <% }) %>
 </ul>
 <a href="vinyl/add">Add new vinyl</a>
