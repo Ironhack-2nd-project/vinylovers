@@ -53,7 +53,7 @@ authRoutes.post("/signup", (req, res, next) => {
   const username = req.body.username;
   const password = req.body.password;
   const email = req.body.email;
-  const location = getLocation();
+  // const location = getLocation();
   if (username === "" || password === "") {
     res.render("auth/signup", { message: "Indicate username and password" });
     return;
