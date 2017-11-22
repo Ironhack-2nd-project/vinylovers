@@ -1,6 +1,6 @@
 const express = require('express');
 const User = require('../models/User');
-const Vinyl = require('../models/Vinyl')
+const Vinyl = require('../models/Vinyl');
 const router = express.Router();
 const multer = require('multer');
 const upload = multer({ dest: './public/uploads/' });
@@ -21,6 +21,11 @@ router.post('/add', upload.single('imgUrl'),(req, res, next) => {
     price: req.body.price,
     owner: req.body.owner,
   };
+
+  router.get('/buy/id:', (req, res, next) => {
+
+    res.render('vinyls/buy');
+  });
 
   const newVinyl = new Vinyl(vinylinfo);
 

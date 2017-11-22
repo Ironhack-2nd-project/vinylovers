@@ -22,7 +22,7 @@
         <p>Album: <%= vinyl.albumName %> by <%= vinyl.artistName %></p>
         <p>Genres: <%= vinyl.genre %></p>
         <p>Price: <%= vinyl.price %></p>
-        <button class="btn" type="button" name="button">Buy Vinyl</button>
+        <a class="btn" type="button" href="vinyl/buy/<%= vinyl._id %>" name="button">Buy Vinyl</a>
         <p>Description: <%= vinyl.description %></p>
       </li>
       <hr>

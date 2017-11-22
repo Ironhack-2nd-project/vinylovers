@@ -6,6 +6,7 @@ const userSchema = new Schema({
   email: { type: String, required: true },
   password: { type: String, required: true },
   location: [Number],
+  money: { type: Number, required: true, default: 200 },
   imgUrl: { type: String, default: "http://lorempixel.com/100/100/people" }
 });
 
