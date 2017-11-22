@@ -1,28 +1,29 @@
 <!-- views/auth/signup.ejs -->
-<h2>Signup</h2>
+<div class="container background-image">
+  <h2>Signup</h2>
+  <form action="/auth/signup" method="POST" id="form-container">
+    <label for="username">Username:</label>
+    <input id="username" type="text" name="username" placeholder="Mick Jagger">
+    <br><br>
+    <label for="email">Email:</label>
+    <input id="email" type="email" name="email" placeholder="your email">
+    <br><br>
+    <label for="password">Password:</label>
+    <input id="password" type="password" name="password" placeholder="Your password">
+    <br><br>
 
-<form action="/auth/signup" method="POST" id="form-container">
-  <label for="username">Username:</label>
-  <input id="username" type="text" name="username" placeholder="Mick Jagger">
-  <br><br>
-  <label for="email">Email:</label>
-  <input id="email" type="email" name="email" placeholder="your email">
-  <br><br>
-  <label for="password">Password:</label>
-  <input id="password" type="password" name="password" placeholder="Your password">
-  <br><br>
 
 
+    <% if (typeof message !== "undefined") { %>
+      <div class="error-message"><%= message %></div>
+    <% } %>
+    <br><br>
 
-  <% if (typeof message !== "undefined") { %>
-    <div class="error-message"><%= message %></div>
-  <% } %>
-  <br><br>
+    <button>Create account</button>
 
-  <button>Create account</button>
-
-  <p class="account-message">
-    Do you already have an account?
-    <a href="/auth/login">Login</a>
-  </p>
-</form>
+    <p class="account-message">
+      Do you already have an account?
+      <a href="/auth/login">Login</a>
+    </p>
+  </form>
+</div>
