@@ -52,7 +52,6 @@ router.get('/buy/:id', (req, res, next) => {
       vinylPrice = vinyl.price;
     console.log(`EL USUARIO LOGEADO TIENE: ${req.user.money} €`);
     console.log(`EL DUEÑO DEL VINILO DE LA COMPRA: ${seller}`);
-      if (buyerMoneyBefore > vinylPrice) console.log(`EL USUARIO PUEDE COMPRAR EL DISCO, EL DISCO CUESTA ${vinylPrice}`);
         User.findById(seller, (err, user) => {
         sellerMoneyBefore = user.money;
       })
@@ -76,11 +75,13 @@ router.get('/buy/:id', (req, res, next) => {
               .then((userAfterSelling) => console.log(`EL VENDEDOR DESPUÉS DE LA COMPRA TIENE: ${userAfterSelling.money} €`));
             })
             .then(res.redirect('/marketplace'));
+        } else {
+          console.log("You do not have enough money in your wallet");
         }
       });
-      .catch ((error) => {
-        throw error; 
-      })
+      // .catch ((error) => {
+      //   throw error;
+      // })
   });
 });
 

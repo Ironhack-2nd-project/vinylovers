@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const path = require('path');
 const favicon = require('serve-favicon');
@@ -16,12 +17,14 @@ const flash = require('connect-flash');
 const index = require('./routes/index');
 const auth = require('./routes/auth');
 const marketplace = require('./routes/marketplace');
+const marketplacebylocation = require('./routes/marketplacebylocation');
 const vinyl = require('./routes/vinyl');
 const user = require('./routes/user');
 
+
 const app = express();
 
-const dbURL = "mongodb://localhost/vinylovers";
+const dbURL = process.env.DBURL;
 mongoose.connect(dbURL).then(() => {
   debug(`Connected to DB: ${dbURL}`);
 });
@@ -63,8 +66,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use ('/auth', auth);
 app.use ('/marketplace', marketplace);
+app.use ('/marketplacebylocation', marketplacebylocation);
 app.use('/vinyl', vinyl);
 app.use('/user',user);
+
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
