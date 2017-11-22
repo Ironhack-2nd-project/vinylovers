@@ -58,7 +58,7 @@ router.get('/buy/:id', (req, res, next) => {
       })
       .then(() => {
         console.log(`SELLER MONEY BEFORE: ${sellerMoneyBefore}`);
-        if (buyerMoneyBefore > vinylPrice) {
+        if (buyerMoneyBefore >= vinylPrice) {
           console.log(`EL USUARIO PUEDE COMPRAR EL DISCO, EL DISCO CUESTA ${vinylPrice}`);
           buyerMoneyAfter = buyerMoneyBefore - vinylPrice;
           sellerMoneyAfter = sellerMoneyBefore + vinylPrice;
@@ -69,13 +69,18 @@ router.get('/buy/:id', (req, res, next) => {
           Vinyl.findByIdAndRemove(theVinyl)
             .then(() => {
               console.log('DISCO ELIMINADO, AHORA ACTUALIZAMOS EL DINERO');
-              User.findByIdAndUpdate(buyerId, {$set : {money : buyerMoneyAfter}})
-              .then(console.log(`EL USUARIO LOGEADO DESPUÉS DE LA COMPRA TIENE: ${req.user.money} €`));
+              console.log(buyerMoneyAfter);
+              User.findByIdAndUpdate(buyerId, {$set : {money : buyerMoneyAfter}}, { new: true })
+              .then((userAfterBuying) => console.log(`EL USUARIO LOGEADO DESPUÉS DE LA COMPRA TIENE: ${userAfterBuying.money} €`));
+              User.findByIdAndUpdate(seller, {$set : {money : sellerMoneyAfter}}, { new: true })
+              .then((userAfterSelling) => console.log(`EL VENDEDOR DESPUÉS DE LA COMPRA TIENE: ${userAfterSelling.money} €`));
             })
             .then(res.redirect('/marketplace'));
         }
       });
-    // res.render('marketplace');
+      .catch ((error) => {
+        throw error; 
+      })
   });
 });
 
