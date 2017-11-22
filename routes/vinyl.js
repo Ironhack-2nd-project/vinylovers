@@ -11,7 +11,6 @@ router.get('/add', (req, res, next) => {
 });
 
 router.post('/add', upload.single('imgUrl'),(req, res, next) => {
-  console.log(req.user);
   let vinylinfo = {
     albumName: req.body.albumName,
     artistName: req.body.artistName,
