@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vinylovers</title>
+</head>
+<body>
+  <h2>Edit Profile</h2>
+  <form action="/user/edit" method="POST" enctype="multipart/form-data" id="form-container">
+    <label for="username">username:</label>
+    <input id="username" type="text" name="username" placeholder="your username here">
+    <br><br>
+    <label for="email">Artist:</label>
+    <input id="email" type="email" name="email" placeholder="your email">
+    <br><br>
+    <label for="password">Genre:</label>
+    <input id="password" type="password" name="password" placeholder="type new password">
+    <br><br>
+    <label for="imgUrl">Image:</label>
+    <input id="imgUrl" type="file" name="imgUrl" placeholder="image">
+    <br><br>
+    <button type="submit">Update Profile</button>
+
+    <% if (typeof message !== "undefined") { %>
+      <div class="error-message">
+        <%= message %>
+      </div>
+      <% } %>
+        <br><br>
+
+        </p>
+  </form>
+</body>
+</html>

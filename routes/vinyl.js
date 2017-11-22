@@ -11,7 +11,7 @@ router.get('/add', (req, res, next) => {
 });
 
 router.post('/add', upload.single('imgUrl'),(req, res, next) => {
-  console.log('====' + req.body);
+  console.log(req.user);
   let vinylinfo = {
     albumName: req.body.albumName,
     artistName: req.body.artistName,
@@ -19,7 +19,7 @@ router.post('/add', upload.single('imgUrl'),(req, res, next) => {
     imgUrl: `/uploads/${req.file.filename}`,
     description: req.body.description,
     price: req.body.price,
-    owner: req.body.owner,
+    owner: req.user._id,
   };
 
   router.get('/buy/id:', (req, res, next) => {
