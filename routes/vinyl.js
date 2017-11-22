@@ -75,12 +75,10 @@ router.get('/buy/:id', (req, res, next) => {
               .then((userAfterSelling) => console.log(`EL VENDEDOR DESPUÉS DE LA COMPRA TIENE: ${userAfterSelling.money} €`));
             })
             .then(res.redirect('/marketplace'));
-        } else {
-          console.log("You do not have enough money in your wallet");
-        }
+        } 
       });
       // .catch ((error) => {
-      //   throw error;
+      //   throw errtor;
       // })
   });
 });

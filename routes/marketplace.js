@@ -8,9 +8,12 @@ router.get('/', function(req, res, next) {
   Vinyl.find()
     //Necesitamos el nombre del propietario del vinilo, no solo el id
     .populate('owner')
+    .exec()
     .then(vinyls => {
+      console.log(req.user);
       res.render('marketplace', {
-        vinyls: vinyls
+        vinyls: vinyls,
+        user: req.user
       });
     });
 });
