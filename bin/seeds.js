@@ -1,11 +1,14 @@
-/*jshint esversion: 6 */
+require('dotenv').config();
+
 const mongoose = require('mongoose');
-const bcrypt         = require('bcrypt');
-const bcryptSalt     = 10;
+const bcrypt = require('bcrypt');
+const bcryptSalt = 10;
 const User = require('../models/User');
 const Vinyl = require('../models/Vinyl');
 
-mongoose.connect('mongodb://localhost/vinylovers', {useMongoClient: true});
+mongoose.connect(process.env.DBURL, {
+  useMongoClient: true
+});
 var salt = bcrypt.genSaltSync(bcryptSalt);
 const password = 'vinylovers';
 var encryptedPass = bcrypt.hashSync(password, salt);
@@ -31,7 +34,7 @@ User.create(user1)
   .then(user => {
     vinyl1.owner = user._id;
     Vinyl.create(vinyl1)
-    .then(() => mongoose.connection.close());
+      .then(() => mongoose.connection.close());
   })
   .catch(err => console.log(err));
 
@@ -39,7 +42,7 @@ const user2 = new User({
   username: 'Niko',
   email: 'niko@gmail.com',
   password: encryptedPass,
-  location: [40.4027785,-3.75404],
+  location: [40.4027785, -3.75404],
   imgUrl: 'http://lorempixel.com/100/100/people'
 });
 
@@ -66,16 +69,16 @@ User.create(user2)
     vinyl2.owner = user._id;
     vinyl3.owner = user._id;
     Vinyl.create(vinyl2)
-      .then( Vinyl.create(vinyl3)
-          .then(() => mongoose.connection.close()));
-    })
-.catch(err => console.log(err));
+      .then(Vinyl.create(vinyl3)
+        .then(() => mongoose.connection.close()));
+  })
+  .catch(err => console.log(err));
 
 const user3 = new User({
   username: 'Yaiza',
   email: 'yaiza@gmail.com',
   password: encryptedPass,
-  location: [41.3851341,2.1679939],
+  location: [41.3851341, 2.1679939],
   imgUrl: 'http://lorempixel.com/100/100/people'
 });
 
@@ -92,7 +95,7 @@ User.create(user3)
   .then(user => {
     vinyl4.owner = user._id;
     Vinyl.create(vinyl4)
-    .then(() => mongoose.connection.close())
+      .then(() => mongoose.connection.close());
   })
   .catch(err => console.log(err));
 
@@ -100,7 +103,7 @@ const user4 = new User({
   username: 'Ana',
   email: 'ana@gmail.com',
   password: encryptedPass,
-  location: [42.5997032,-5.5688593],
+  location: [42.5997032, -5.5688593],
   imgUrl: 'http://lorempixel.com/100/100/people'
 });
 
@@ -117,6 +120,6 @@ User.create(user4)
   .then(user => {
     vinyl5.owner = user._id;
     Vinyl.create(vinyl5)
-    .then(() => mongoose.connection.close());
+      .then(() => mongoose.connection.close());
   })
   .catch(err => console.log(err));

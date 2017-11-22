@@ -10,6 +10,7 @@ const VinylSchema = new Schema({
   price: {type: Number, required: true},
   owner: {type: Schema.Types.ObjectId, ref: 'User', required: true},
 });
+VinylSchema.set('timestamps', true);
 
 const Vinyl = mongoose.model('Vinyl', VinylSchema);
 

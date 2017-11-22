@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const path = require('path');
 const favicon = require('serve-favicon');
@@ -21,7 +22,7 @@ const user = require('./routes/user');
 
 const app = express();
 
-const dbURL = "mongodb://localhost/vinylovers";
+const dbURL = process.env.DBURL;
 mongoose.connect(dbURL).then(() => {
   debug(`Connected to DB: ${dbURL}`);
 });

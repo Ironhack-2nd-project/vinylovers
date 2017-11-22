@@ -7,31 +7,6 @@ const User = require("../models/User");
 const bcrypt = require("bcrypt");
 const bcryptSalt = 10;
 
-//GEOLOCATION
-function getLocation() {
-  var options = {
-    enableHighAccuracy: true,
-    timeout: 5000,
-    maximumAge: 0
-  };
-
-  function success(pos) {
-    var crd = pos.coords;
-    console.log(`Las coordenadas de crd: ${crd}`);
-    console.log('Your current position is:');
-    console.log(`Latitude : ${crd.latitude}`);
-    console.log(`Longitude: ${crd.longitude}`);
-    console.log(`More or less ${crd.accuracy} meters.`);
-    return crd;
-  };
-
-  function error(err) {
-    console.warn(`ERROR(${err.code}): ${err.message}`);
-  };
-
-  navigator.geolocation.getCurrentPosition(success, error, options);
-}
-
 authRoutes.get("/login", (req, res, next) => {
   res.render("auth/login", { "message": req.flash("error") });
 });
