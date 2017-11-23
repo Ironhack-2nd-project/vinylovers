@@ -21,7 +21,7 @@
     <div class="album-container">
       <li>
         <div class="user">
-          <img class="avatar" src="<%= user.imgUrl %>" alt="">
+          <img class="avatar" src="<%= vinyl.owner.imgUrl %>" alt="">
           <p class="username">Owner username: <%= vinyl.owner.username %></p>
         </div>
         <img class="cover" src="<%= vinyl.imgUrl %>" alt="Imagen del album">
@@ -29,7 +29,7 @@
         <p>Genres: <%= vinyl.genre %></p>
         <p>Price: <%= vinyl.price %></p>
         <p>Description: <%= vinyl.description %></p>
-        <% if(user.money < vinyl.price){ %>
+        <% if(vinyl.owner.money < vinyl.price){ %>
           <spam> You do not have enough money</spam>
         <% } else {%>
           <a class="btn" type="button" href="vinyl/buy/<%= vinyl._id %>" name="button">Buy Vinyl</a>
