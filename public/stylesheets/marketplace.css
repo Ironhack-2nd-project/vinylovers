@@ -13,6 +13,13 @@ hr {
 .cover {
   width: 300px;
 }
+
+.user-panel {
+  width: 400px;
+  height: 4em;
+  background-color: grey;
+}
+
 a {
   color: white;
 }

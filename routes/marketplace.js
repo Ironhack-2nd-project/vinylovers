@@ -15,6 +15,7 @@ router.get('/', function(req, res, next) {
     .then(vinyls => {
       console.log("Vinyls filtered", vinyls);
       res.render('marketplace', {
+        currentuser: res.locals.user,
         vinyls: vinyls,
         maxDistance : distance/1000
       });

@@ -9,11 +9,11 @@ const { ensureLoggedIn, ensureLoggedOut } = require('connect-ensure-login');
 const bcrypt = require("bcrypt");
 const bcryptSalt = 10;
 
-authRoutes.get("/login", (req, res, next) => {
+authRoutes.get("/login",ensureLoggedOut(), (req, res, next) => {
   res.render("auth/login", { "message": req.flash("error") });
 });
 
-authRoutes.post("/login", passport.authenticate("local", {
+authRoutes.post("/login", ensureLoggedOut(), passport.authenticate("local", {
   successRedirect: "/marketplace",
   failureRedirect: "/auth/login",
   failureFlash: true,
@@ -24,7 +24,7 @@ authRoutes.get("/signup", ensureLoggedOut(), (req, res, next) => {
   res.render("auth/signup");
 });
 
-authRoutes.post("/signup", (req, res, next) => {
+authRoutes.post("/signup", ensureLoggedOut(), (req, res, next) => {
   const username = req.body.username;
   const password = req.body.password;
   const email = req.body.email;
@@ -59,13 +59,13 @@ authRoutes.post("/signup", (req, res, next) => {
       if (err) {
         res.render("auth/signup", { message: "Something went wrong" });
       } else {
-        res.redirect("/");
+        res.redirect("/auth/login");
       }
     });
   });
 });
 
-authRoutes.get("/logout", (req, res) => {
+authRoutes.get("/logout", ensureLoggedIn(), (req, res) => {
   req.logout();
   res.redirect("/");
 });
