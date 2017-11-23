@@ -21,6 +21,10 @@ router.post('/add', upload.single('imgUrl'),(req, res, next) => {
     description: req.body.description,
     price: req.body.price,
     owner: req.user.id,
+    location : {
+        type: 'Point',
+        coordinates: [req.body.longitude, req.body.latitude]
+    }
   };
 
   const newVinyl = new Vinyl(vinylinfo);

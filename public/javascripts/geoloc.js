@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> e0a46eee521f430ca9986b28d527814f478f4216
 function showPosition(position) {
   const { latitude, longitude } =  position.coords;
   document.getElementById("latitude").value = latitude;
