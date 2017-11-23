@@ -24,7 +24,7 @@ const user1 = new User({
       39.4786079
     ]
   },
-  imgUrl: 'http://lorempixel.com/100/100/people'
+  imgUrl: 'http://www.avatarsdb.com/avatars/monkey_boss.jpg'
 });
 
 const vinyl1 = new Vinyl({
@@ -63,7 +63,7 @@ const user2 = new User({
     ]
   },
 
-  imgUrl: 'http://lorempixel.com/100/100/people'
+  imgUrl: 'http://www.avatarsdb.com/avatars/kevin_spacey_7.jpg'
 });
 
 const vinyl2 = new Vinyl({
@@ -119,7 +119,7 @@ const user3 = new User({
       41.3851341
     ]
   },
-  imgUrl: 'http://lorempixel.com/100/100/people'
+  imgUrl: 'http://www.avatarsdb.com/avatars/headbangers.gif'
 });
 
 const vinyl4 = new Vinyl({
@@ -271,7 +271,7 @@ const user7 = new User({
       42.8464432
     ]
   },
-  imgUrl: 'http://lorempixel.com/100/100/people'
+  imgUrl: 'http://www.avatarsdb.com/avatars/cute_nick.jpg'
 });
 
 const vinyl8 = new Vinyl({
@@ -309,7 +309,7 @@ const user8 = new User({
       42.8464432
     ]
   },
-  imgUrl: 'http://lorempixel.com/100/100/people'
+  imgUrl: 'http://www.avatarsdb.com/avatars/rihanna_shark.jpg'
 });
 
 const vinyl9 = new Vinyl({
@@ -516,7 +516,7 @@ const user13 = new User({
       42.6036003
     ]
   },
-  imgUrl: 'http://lorempixel.com/100/100/people'
+  imgUrl: 'http://www.avatarsdb.com/avatars/kevin_spacey_3.jpg'
 });
 
 const vinyl15 = new Vinyl({
