@@ -4,12 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Shrikhand" rel="stylesheet">
   <title>Vinylovers</title>
 </head>
 <body>
   <div class="marketplace-container">
     <div class="top-row">
-      <h1>Market Place</h1>
+      <h1 class="title-market-place"> Market Place</h1>
       <div class="range-form-container">
         <form action="/marketplace" method="POST" id="form-container">
           <span>Filter results by distance in Km</span><input id="distanceSlider" type="range" min="0" max="600" value="<%= maxDistance %>" step="10" />

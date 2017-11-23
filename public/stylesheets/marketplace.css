@@ -7,6 +7,12 @@ hr {
   margin-bottom: 30px;
 }
 
+.title-market-place {
+  font-family: 'Shrikhand';
+    color: white;
+    font-size: 40px;
+}
+
 .range-form-container {
   padding-left: 2em;
 }

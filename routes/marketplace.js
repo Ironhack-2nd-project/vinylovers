@@ -10,7 +10,6 @@ router.get('/', function(req, res, next) {
             $minDistance: 0,
             $maxDistance: distance
           } } } )
-    //Necesitamos el nombre del propietario del vinilo, no solo el id
     .populate('owner')
     .then(vinyls => {
       console.log("Vinyls filtered", vinyls);
