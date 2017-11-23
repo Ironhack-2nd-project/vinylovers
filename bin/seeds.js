@@ -424,7 +424,7 @@ User.create(user4)
             User.create(user10)
               .then(user => {
                 vinyl12.owner = user._id;
-                Vinyl.create(viny12)
+                Vinyl.create(vinyl12)
                   .then(() => mongoose.connection.close());
               })
               .catch(err => console.log(err));
@@ -504,3 +504,153 @@ User.create(user4)
                       .then(() => mongoose.connection.close());
                   })
                   .catch(err => console.log(err));
+
+                  const user13 = new User({
+                    username: 'Erne',
+                    email: 'erne@gmail.com',
+                    password: encryptedPass,
+                    location: {
+                      "type": "Point",
+                      "coordinates": [
+                        -5.6124107,
+                        42.6036003
+                      ]
+                    },
+                    imgUrl: 'http://lorempixel.com/100/100/people'
+                  });
+
+                  const vinyl15 = new Vinyl({
+                    albumName: 'Hot Rocks 1964-1971',
+                    artistName: 'Bob Marley and The Wailers',
+                    genre: 'Reggea',
+                    imgUrl: 'http://www.thepier.org/wp-content/uploads/2013/04/lp-bob-marley-catch-a-fire-180-gram-vinyl.jpg',
+                    description: 'New',
+                    location: {
+                      "type": "Point",
+                      "coordinates": [
+                        -5.6124107,
+                        42.6036003
+                      ]
+                    },
+                    price: 20
+                  });
+
+                  User.create(user13)
+                    .then(user => {
+                      vinyl15.owner = user._id;
+                      Vinyl.create(vinyl15)
+                        .then(() => mongoose.connection.close());
+                    })
+                    .catch(err => console.log(err));
+// user 14 to edit
+                    const user14 = new User({
+                      username: 'Victor',
+                      email: 'victor@gmail.com',
+                      password: encryptedPass,
+                      location: {
+                        "type": "Point",
+                        "coordinates": [
+                        -3.7905429,
+                        40.4222524
+                      ]
+                      },
+                      imgUrl: 'http://lorempixel.com/100/100/people'
+                    });
+
+                    const vinyl16 = new Vinyl({
+                      albumName: 'London Calling',
+                      artistName: 'The Clash',
+                      genre: 'Reggea',
+                      imgUrl: 'https://img.discogs.com/h68VySaLpts6mIomNT0rfpvLpIU=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-470912-1248752385.jpeg.jpg',
+                      description: 'New',
+                      location: {
+                        "type": "Point",
+                        "coordinates": [
+                          -3.7905429,
+                          40.4222524
+                        ]
+                      },
+                      price: 45
+                    });
+
+                    const vinyl17 = new Vinyl({
+                      albumName: 'Coexist',
+                      artistName: 'The XX',
+                      genre: 'Post-punk',
+                      imgUrl: 'https://img.discogs.com/vF9lQezMFNWjjNgZn5nDXx3Bir4=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-3855300-1410560930-6190.jpeg.jpg',
+                      description: 'New, remastered',
+                      location: {
+                        "type": "Point",
+                        "coordinates": [
+                          -3.7905429,
+                          40.4222524
+                        ]
+                      },
+                      price: 40
+                    });
+
+                    User.create(user14)
+                      .then(user => {
+                        vinyl16.owner = user._id;
+                        vinyl17.owner = user._id;
+                        Vinyl.create(vinyl16)
+                          .then(Vinyl.create(vinyl17)
+                            .then(() => mongoose.connection.close()));
+                      })
+                      .catch(err => console.log(err));
+//user 15
+                      const user15 = new User({
+                        username: 'Camila',
+                        email: 'cam@gmail.com',
+                        password: encryptedPass,
+                        location: {
+                          "type": "Point",
+                          "coordinates": [
+                          -3.7832934,
+                          40.4249366
+                        ]
+                        },
+                        imgUrl: 'http://lorempixel.com/100/100/people'
+                      });
+
+                      const vinyl18 = new Vinyl({
+                        albumName: 'Never Mind the Bollocks, Heres the Sex Pistols',
+                        artistName: 'Sex Pistols',
+                        genre: 'Punk rock',
+                        imgUrl: 'https://ssli.ebayimg.com/images/g/EYIAAOSwPpZZ~0Zk/s-l640.jpg',
+                        description: 'Limited Edition',
+                        location: {
+                          "type": "Point",
+                          "coordinates": [
+                            -3.7832934,
+                            40.4249366
+                          ]
+                        },
+                        price: 70
+                      });
+
+                      const vinyl19 = new Vinyl({
+                        albumName: 'Cheap Thrills',
+                        artistName: 'Big Brother and the Holding Company',
+                        genre: 'Psychedelic rock',
+                        imgUrl: 'http://cdn.shopify.com/s/files/1/0825/8349/products/Big_Brother_and_the_holding_company_cheap_thrills_vinyl_record_lpIMG_9724_grande.jpg?v=1472059954',
+                        description: 'Used, original, good conditions ',
+                        location: {
+                          "type": "Point",
+                          "coordinates": [
+                            -3.7832934,
+                            40.4249366
+                          ]
+                        },
+                        price: 50
+                      });
+
+                      User.create(user15)
+                        .then(user => {
+                          vinyl18.owner = user._id;
+                          vinyl19.owner = user._id;
+                          Vinyl.create(vinyl18)
+                            .then(Vinyl.create(vinyl19)
+                              .then(() => mongoose.connection.close()));
+                        })
+                        .catch(err => console.log(err));
