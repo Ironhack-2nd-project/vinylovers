@@ -7,8 +7,8 @@ const Vinyl = require('../models/Vinyl');
 router.get('/', function(req, res, next) {
   Vinyl.find({ location: { $near: {
             $geometry: { type: "Point", coordinates: [-3.698514, 40.392322199999995] },
-            $minDistance: 1000,
-            $maxDistance: 400000
+            $minDistance: 0,
+            $maxDistance: 100000
           } } } )
     //Necesitamos el nombre del propietario del vinilo, no solo el id
     //.populate('owner')

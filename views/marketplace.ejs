@@ -9,7 +9,11 @@
 </head>
 <body>
   <h1>Market Place</h1>
-
+  <div>
+    <span>Filter results by distance in Km</span><input id="distance-slider" type="range" min="100" max="600" value="300" step="10" onchange="printValue('distance-slider','range-value')" />
+    <input id="range-value" type="number" value="300"/>
+    <button id="range-button" type="button" name="button">Search</button>
+  </div>
 <ul>
   <% vinyls.forEach((vinyl) => { %>
     <div class="album-container">
@@ -35,6 +39,6 @@
 
   <% }) %>
 <a href="vinyl/add">Add vinyl</a>
-
+<script type="text/javascript" src="/javascripts/range.js"></script>
 </body>
 </html>

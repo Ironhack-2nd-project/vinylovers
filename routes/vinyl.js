@@ -49,30 +49,20 @@ router.get('/buy/:id', (req, res, next) => {
   let sellerMoneyBefore;
   let sellerMoneyAfter;
   let theVinyl = req.params.id;
-  // console.log(`EL USUARIO LOGEADO: ${req.user}`);
   Vinyl.findById(theVinyl)
     .then(vinyl => {
       seller = vinyl.owner;
       vinylPrice = vinyl.price;
-    console.log(`EL USUARIO LOGEADO TIENE: ${req.user.money} €`);
-    console.log(`EL DUEÑO DEL VINILO DE LA COMPRA: ${seller}`);
         User.findById(seller, (err, user) => {
         sellerMoneyBefore = user.money;
       })
       .then(() => {
-        console.log(`SELLER MONEY BEFORE: ${sellerMoneyBefore}`);
         if (buyerMoneyBefore >= vinylPrice) {
-          console.log(`EL USUARIO PUEDE COMPRAR EL DISCO, EL DISCO CUESTA ${vinylPrice}`);
           buyerMoneyAfter = buyerMoneyBefore - vinylPrice;
           sellerMoneyAfter = sellerMoneyBefore + vinylPrice;
-          console.log(`AHORA EL COMPRADOR DEBERÍA TENER ${buyerMoneyAfter}`);
-          console.log(`AHORA EL VENDEDOR TIENE ${sellerMoneyAfter}`);
           //Remove vinyl from seller
-          console.log(theVinyl);
           Vinyl.findByIdAndRemove(theVinyl)
             .then(() => {
-              console.log('DISCO ELIMINADO, AHORA ACTUALIZAMOS EL DINERO');
-              console.log(buyerMoneyAfter);
               User.findByIdAndUpdate(buyerId, {$set : {money : buyerMoneyAfter}}, { new: true })
               .then((userAfterBuying) => console.log(`EL USUARIO LOGEADO DESPUÉS DE LA COMPRA TIENE: ${userAfterBuying.money} €`));
               User.findByIdAndUpdate(seller, {$set : {money : sellerMoneyAfter}}, { new: true })
