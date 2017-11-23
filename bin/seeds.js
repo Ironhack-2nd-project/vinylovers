@@ -504,3 +504,41 @@ User.create(user4)
                       .then(() => mongoose.connection.close());
                   })
                   .catch(err => console.log(err));
+
+                  const user13 = new User({
+                    username: 'Erne',
+                    email: 'erne@gmail.com',
+                    password: encryptedPass,
+                    location: {
+                      "type": "Point",
+                      "coordinates": [
+                        -5.6124107,
+                        42.6036003
+                      ]
+                    },
+                    imgUrl: 'http://lorempixel.com/100/100/people'
+                  });
+
+                  const vinyl15 = new Vinyl({
+                    albumName: 'Hot Rocks 1964-1971',
+                    artistName: 'Bob Marley and The Wailers',
+                    genre: 'Reggea',
+                    imgUrl: 'http://www.thepier.org/wp-content/uploads/2013/04/lp-bob-marley-catch-a-fire-180-gram-vinyl.jpg',
+                    description: 'New',
+                    location: {
+                      "type": "Point",
+                      "coordinates": [
+                        -5.6124107,
+                        42.6036003
+                      ]
+                    },
+                    price: 20
+                  });
+
+                  User.create(user13)
+                    .then(user => {
+                      vinyl15.owner = user._id;
+                      Vinyl.create(vinyl15)
+                        .then(() => mongoose.connection.close());
+                    })
+                    .catch(err => console.log(err));
