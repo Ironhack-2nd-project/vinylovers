@@ -14,6 +14,7 @@ router.get('/', function(req, res, next) {
     .populate('owner')
     .then(vinyls => {
       console.log("Vinyls filtered", vinyls);
+      console.log("Owner", vinyls.owner);
       res.render('marketplace', {
         currentuser: res.locals.user,
         vinyls: vinyls,
