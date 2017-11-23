@@ -183,3 +183,155 @@ User.create(user4)
       .then(() => mongoose.connection.close());
   })
   .catch(err => console.log(err));
+
+  const user5 = new User({
+    username: 'Igna',
+    email: 'igna@gmail.com',
+    password: encryptedPass,
+    location: {
+      "type": "Point",
+      "coordinates": [
+        -3.6250898,
+        40.4398256
+      ]
+    },
+    imgUrl: 'http://lorempixel.com/100/100/people'
+  });
+
+  const vinyl6 = new Vinyl({
+    albumName: 'Speaking in Tongues',
+    artistName: 'Talking Heads',
+    genre: 'Electronic Rock',
+    imgUrl: 'https://img.discogs.com/pKm5mGrvSjx5yCQjTswpWJwEL_8=/fit-in/600x603/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-2627660-1430943583-6611.jpeg.jpg',
+    description: 'Sealed',
+    location: {
+      "type": "Point",
+      "coordinates": [
+        -3.6250898,
+        40.4398256
+      ]
+    },
+    price: 50
+  });
+
+  User.create(user5)
+    .then(user => {
+      vinyl6.owner = user._id;
+      Vinyl.create(vinyl6)
+        .then(() => mongoose.connection.close());
+    })
+    .catch(err => console.log(err));
+
+    const user6 = new User({
+      username: 'Juan',
+      email: 'juan@gmail.com',
+      password: encryptedPass,
+      location: {
+        "type": "Point",
+        "coordinates": [
+          -2.6742772,
+          42.8464432
+        ]
+      },
+      imgUrl: 'http://lorempixel.com/100/100/people'
+    });
+
+    const vinyl7 = new Vinyl({
+      albumName: 'Sgt. Peppers Lonely Hearts Club Band',
+      artistName: 'The Beatles',
+      genre: 'Rock, Pop',
+      imgUrl: 'https://img.discogs.com/pKm5mGrvSjx5yCQjTswpWJwEL_8=/fit-in/600x603/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-2627660-1430943583-6611.jpeg.jpg',
+      description: 'Limited edition, used',
+      location: {
+        "type": "Point",
+        "coordinates": [
+          -2.6742772,
+          42.8464432
+        ]
+      },
+      price: 100
+    });
+
+    User.create(user6)
+      .then(user => {
+        vinyl7.owner = user._id;
+        Vinyl.create(vinyl7)
+          .then(() => mongoose.connection.close());
+      })
+      .catch(err => console.log(err));
+
+      const user7 = new User({
+        username: 'Juan',
+        email: 'juan@gmail.com',
+        password: encryptedPass,
+        location: {
+          "type": "Point",
+          "coordinates": [
+            -2.6742772,
+            42.8464432
+          ]
+        },
+        imgUrl: 'http://lorempixel.com/100/100/people'
+      });
+
+      const vinyl8 = new Vinyl({
+        albumName: 'Currents',
+        artistName: 'Tame Impala',
+        genre: 'Psychedelic pop',
+        imgUrl: 'https://i.scdn.co/image/c253c1f0eaf702620d45c1c7041d1ba161859b33',
+        description: 'Sealed remastered 2012 edition',
+        location: {
+          "type": "Point",
+          "coordinates": [
+            -2.6742772,
+            42.8464432
+          ]
+        },
+        price: 50
+      });
+
+      User.create(user7)
+        .then(user => {
+          vinyl8.owner = user._id;
+          Vinyl.create(vinyl8)
+            .then(() => mongoose.connection.close());
+        })
+        .catch(err => console.log(err));
+
+        const user8 = new User({
+          username: 'Lucas',
+          email: 'lucas@gmail.com',
+          password: encryptedPass,
+          location: {
+            "type": "Point",
+            "coordinates": [
+              -3.6911267,
+              42.8464432
+            ]
+          },
+          imgUrl: 'http://lorempixel.com/100/100/people'
+        });
+
+        const vinyl9 = new Vinyl({
+          albumName: 'Unknown Pleasures',
+          artistName: 'Joy Division',
+          genre: 'Post-punk',
+          imgUrl: 'https://consequenceofsound.files.wordpress.com/2012/07/unknownpleasures.jpeg',
+          description: 'Sealed remastered 2000 edition',
+          location: {
+            "type": "Point",
+            "coordinates": [
+              -3.6911267,
+              42.8464432
+            ]
+          },
+          price: 65
+        });
+
+        User.create(user8)
+          .then(user => {
+            vinyl9.owner = user._id;
+            Vinyl.create(vinyl9)
+              .then(() => mongoose.connection.close());
+          })
+          .catch(err => console.log(err));
