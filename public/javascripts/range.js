@@ -1,7 +1,9 @@
 console.log('range loaded');
-function printValue(rangeComponent, textField) {
-  const range = document.getElementById(rangeComponent);
-  const rangeText = document.getElementById(textField);
 
-  rangeText.value = range.value;
-}
+//Connect slider and text field to update each other
+document.getElementById('distanceSlider').addEventListener('change', function(){
+  document.getElementById('rangevalue').value = this.value;
+});
+document.getElementById('rangevalue').addEventListener('change', function(){
+  document.getElementById('distanceSlider').value = this.value;
+});
