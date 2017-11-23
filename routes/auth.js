@@ -2,6 +2,8 @@ const express = require("express");
 const passport = require('passport');
 const authRoutes = express.Router();
 const User = require("../models/User");
+const { ensureLoggedIn, ensureLoggedOut } = require('connect-ensure-login');
+
 
 // Bcrypt to encrypt passwords
 const bcrypt = require("bcrypt");
@@ -18,7 +20,7 @@ authRoutes.post("/login", passport.authenticate("local", {
   passReqToCallback: true
 }));
 
-authRoutes.get("/signup", (req, res, next) => {
+authRoutes.get("/signup", ensureLoggedOut(), (req, res, next) => {
   res.render("auth/signup");
 });
 

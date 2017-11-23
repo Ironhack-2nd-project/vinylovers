@@ -20,7 +20,6 @@ const marketplace = require('./routes/marketplace');
 const vinyl = require('./routes/vinyl');
 const user = require('./routes/user');
 
-
 const app = express();
 
 const dbURL = process.env.DBURL;
@@ -59,15 +58,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-
-
 // Use routes
 app.use('/', index);
 app.use ('/auth', auth);
 app.use ('/marketplace', marketplace);
 app.use('/vinyl', vinyl);
 app.use('/user',user);
-
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

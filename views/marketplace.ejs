@@ -9,7 +9,7 @@
 </head>
 <body>
   <h1>Market Place</h1>
-  <div>
+  <div class="range-form-container">
     <form action="/marketplace" method="POST" id="form-container">
     <span>Filter results by distance in Km</span><input id="distanceSlider" type="range" min="0" max="600" value="<%= maxDistance %>" step="10" />
     <input id="rangevalue" type="number" name="rangevalue" min="0" max="600" value="<%= maxDistance %>"/>
@@ -24,7 +24,7 @@
           <img class="avatar" src="<%= user.imgUrl %>" alt="">
           <p class="username">Owner username: <%= vinyl.owner.username %></p>
         </div>
-        <img src="<%= vinyl.imgUrl %>" alt="Imagen del album">
+        <img class="cover" src="<%= vinyl.imgUrl %>" alt="Imagen del album">
         <p>Album: <%= vinyl.albumName %> by <%= vinyl.artistName %></p>
         <p>Genres: <%= vinyl.genre %></p>
         <p>Price: <%= vinyl.price %></p>
@@ -35,10 +35,8 @@
           <a class="btn" type="button" href="vinyl/buy/<%= vinyl._id %>" name="button">Buy Vinyl</a>
           <%}%>
       </li>
-      <hr>
     </div>
 </ul>
-
   <% }) %>
 <a href="vinyl/add">Add vinyl</a>
 <script type="text/javascript" src="/javascripts/range.js"></script>

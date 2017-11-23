@@ -1,8 +1,6 @@
-<!-- <h1><%= title %></h1>
-<p>Welcome to <%= title %></p> -->
 <div class="container background-image">
   <h1 class ="web-title">Vinylovers</h1>
-  <h2 class= "web-description">Welcome to the best exchange for your old-time best records! </h2>
+  <h2 class= "web-description">Welcome to the best exchange for your old-time best records!</h2>
   <% if(!user){ %>
     <ul>
       <li class="login"><a href="/auth/login" class="login button" >Login</a></li>
@@ -10,6 +8,7 @@
     </ul>
   <% }else{ %>
       <a href="/marketplace">Market Place </a>
+      
       <a href="/auth/logout">Logout <%= user.username %></a>
   <% } %>
   </div>

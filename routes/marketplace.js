@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
             $maxDistance: distance
           } } } )
     //Necesitamos el nombre del propietario del vinilo, no solo el id
-    //.populate('owner')
+    .populate('owner')
     .then(vinyls => {
       console.log("Vinyls filtered", vinyls);
       res.render('marketplace', {
@@ -29,7 +29,7 @@ router.post('/', function(req, res, next) {
             $maxDistance: distance*1000
           } } } )
     //Necesitamos el nombre del propietario del vinilo, no solo el id
-    //.populate('owner')
+    .populate('owner')
     .then(vinyls => {
       console.log("Vinyls filtered", vinyls);
       res.render('marketplace', {

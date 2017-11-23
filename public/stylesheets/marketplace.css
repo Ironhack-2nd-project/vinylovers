@@ -7,6 +7,12 @@ hr {
   margin-bottom: 30px;
 }
 
+.range-form-container {
+  padding-left: 2em;
+}
+.cover {
+  width: 300px;
+}
 a {
   color: white;
 }
@@ -18,8 +24,13 @@ a {
   margin-right: 1em;
 }
 
-ul {
+ul, li {
   list-style-type: none;
+}
+
+.album-container {
+  padding-bottom: 2em;
+  border-bottom: 1px dashed grey;
 }
 
 .user {
