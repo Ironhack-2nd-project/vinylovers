@@ -19,7 +19,8 @@ const user1 = new User({
   password: encryptedPass,
   location: {
     "type": "Point",
-    "coordinates": [-0.3221189,
+    "coordinates": [
+      -0.3221189,
       39.4786079
     ]
   },
@@ -34,7 +35,8 @@ const vinyl1 = new Vinyl({
   description: 'Sealed copy of remastered edition',
   location: {
     "type": "Point",
-    "coordinates": [-0.3221189,
+    "coordinates": [
+      -0.3221189,
       39.4786079
     ]
   },
@@ -55,7 +57,8 @@ const user2 = new User({
   password: encryptedPass,
   location: {
     "type": "Point",
-    "coordinates": [-3.75404,
+    "coordinates": [
+      -3.75404,
       40.4027785
     ]
   },
@@ -71,7 +74,8 @@ const vinyl2 = new Vinyl({
   description: 'First edition',
   location: {
     "type": "Point",
-    "coordinates": [-3.75404,
+    "coordinates": [
+      -3.75404,
       40.4027785
     ]
   },
@@ -86,7 +90,8 @@ const vinyl3 = new Vinyl({
   description: 'First edition',
   location: {
     "type": "Point",
-    "coordinates": [-3.75404,
+    "coordinates": [
+      -3.75404,
       40.4027785
     ]
   },
@@ -147,7 +152,8 @@ const user4 = new User({
   password: encryptedPass,
   location: {
     "type": "Point",
-    "coordinates": [-5.5688593,
+    "coordinates": [
+      -5.5688593,
       42.5997032
     ]
   },
@@ -162,7 +168,8 @@ const vinyl5 = new Vinyl({
   description: 'Sealed remastered 2010 edition',
   location: {
     "type": "Point",
-    "coordinates": [-5.5688593,
+    "coordinates": [
+      -5.5688593,
       42.5997032
     ]
   },
@@ -183,7 +190,8 @@ const user5 = new User({
   password: encryptedPass,
   location: {
     "type": "Point",
-    "coordinates": [-3.6250898,
+    "coordinates": [
+      -3.6250898,
       40.4398256
     ]
   },
@@ -198,7 +206,8 @@ const vinyl6 = new Vinyl({
   description: 'Sealed',
   location: {
     "type": "Point",
-    "coordinates": [-3.6250898,
+    "coordinates": [
+      -3.6250898,
       40.4398256
     ]
   },
@@ -219,7 +228,8 @@ const user6 = new User({
   password: encryptedPass,
   location: {
     "type": "Point",
-    "coordinates": [-2.6742772,
+    "coordinates": [
+      -2.6742772,
       42.8464432
     ]
   },
@@ -234,7 +244,8 @@ const vinyl7 = new Vinyl({
   description: 'Limited edition, used',
   location: {
     "type": "Point",
-    "coordinates": [-2.6742772,
+    "coordinates": [
+      -2.6742772,
       42.8464432
     ]
   },
@@ -255,7 +266,8 @@ const user7 = new User({
   password: encryptedPass,
   location: {
     "type": "Point",
-    "coordinates": [-2.6742772,
+    "coordinates": [
+      -2.6742772,
       42.8464432
     ]
   },
@@ -270,7 +282,8 @@ const vinyl8 = new Vinyl({
   description: 'Sealed remastered 2012 edition',
   location: {
     "type": "Point",
-    "coordinates": [-2.6742772,
+    "coordinates": [
+      -2.6742772,
       42.8464432
     ]
   },
@@ -291,7 +304,8 @@ const user8 = new User({
   password: encryptedPass,
   location: {
     "type": "Point",
-    "coordinates": [-3.6911267,
+    "coordinates": [
+      -3.6911267,
       42.8464432
     ]
   },
@@ -306,7 +320,8 @@ const vinyl9 = new Vinyl({
   description: 'Sealed remastered 2000 edition',
   location: {
     "type": "Point",
-    "coordinates": [-3.6911267,
+    "coordinates": [
+      -3.6911267,
       42.8464432
     ]
   },
@@ -327,7 +342,8 @@ const user9 = new User({
   password: encryptedPass,
   location: {
     "type": "Point",
-    "coordinates": [-3.7687216,
+    "coordinates": [
+      -3.7687216,
       40.4213941
     ]
   },
@@ -342,7 +358,8 @@ const vinyl10 = new Vinyl({
   description: 'Sealed ',
   location: {
     "type": "Point",
-    "coordinates": [-3.7687216,
+    "coordinates": [
+      -3.7687216,
       40.4213941
     ]
   },
@@ -357,7 +374,8 @@ const vinyl11 = new Vinyl({
   description: 'Original',
   location: {
     "type": "Point",
-    "coordinates": [-3.7687216,
+    "coordinates": [
+      -3.7687216,
       40.4213941
     ]
   },
@@ -379,7 +397,8 @@ const user10 = new User({
   password: encryptedPass,
   location: {
     "type": "Point",
-    "coordinates": [-2.6742772,
+    "coordinates": [
+      -2.6742772,
       42.8464432
     ]
   },
@@ -394,7 +413,8 @@ const vinyl12 = new Vinyl({
   description: 'used remastered 2012 edition',
   location: {
     "type": "Point",
-    "coordinates": [-2.6742772,
+    "coordinates": [
+      -2.6742772,
       42.8464432
     ]
   },
@@ -415,7 +435,8 @@ const user11 = new User({
   password: encryptedPass,
   location: {
     "type": "Point",
-    "coordinates": [-3.7712832,
+    "coordinates": [
+      -3.7712832,
       40.3912236
     ]
   },
@@ -430,7 +451,8 @@ const vinyl13 = new Vinyl({
   description: 'Original but used',
   location: {
     "type": "Point",
-    "coordinates": [-3.7712832,
+    "coordinates": [
+      -3.7712832,
       40.3912236
     ]
   },
@@ -451,7 +473,8 @@ const user12 = new User({
   password: encryptedPass,
   location: {
     "type": "Point",
-    "coordinates": [-3.7011569,
+    "coordinates": [
+      -3.7011569,
       40.3938903
     ]
   },
@@ -466,7 +489,8 @@ const vinyl14 = new Vinyl({
   description: 'Sealed, remastered',
   location: {
     "type": "Point",
-    "coordinates": [-3.7011569,
+    "coordinates": [
+      -3.7011569,
       40.3938903
     ]
   },
@@ -487,7 +511,8 @@ const user13 = new User({
   password: encryptedPass,
   location: {
     "type": "Point",
-    "coordinates": [-5.6124107,
+    "coordinates": [
+      -5.6124107,
       42.6036003
     ]
   },
@@ -502,7 +527,8 @@ const vinyl15 = new Vinyl({
   description: 'New',
   location: {
     "type": "Point",
-    "coordinates": [-5.6124107,
+    "coordinates": [
+      -5.6124107,
       42.6036003
     ]
   },
@@ -516,14 +542,15 @@ User.create(user13)
       .then(() => mongoose.connection.close());
   })
   .catch(err => console.log(err));
-// user 14 to edit
+
 const user14 = new User({
   username: 'Victor',
   email: 'victor@gmail.com',
   password: encryptedPass,
   location: {
     "type": "Point",
-    "coordinates": [-3.7905429,
+    "coordinates": [
+      -3.7905429,
       40.4222524
     ]
   },
@@ -538,7 +565,8 @@ const vinyl16 = new Vinyl({
   description: 'New',
   location: {
     "type": "Point",
-    "coordinates": [-3.7905429,
+    "coordinates": [
+      -3.7905429,
       40.4222524
     ]
   },
@@ -553,7 +581,8 @@ const vinyl17 = new Vinyl({
   description: 'New, remastered',
   location: {
     "type": "Point",
-    "coordinates": [-3.7905429,
+    "coordinates": [
+      -3.7905429,
       40.4222524
     ]
   },
@@ -576,7 +605,8 @@ const user15 = new User({
   password: encryptedPass,
   location: {
     "type": "Point",
-    "coordinates": [-3.7832934,
+    "coordinates": [
+      -3.7832934,
       40.4249366
     ]
   },
@@ -606,7 +636,8 @@ const vinyl19 = new Vinyl({
   description: 'Used, original, good conditions ',
   location: {
     "type": "Point",
-    "coordinates": [-3.7832934,
+    "coordinates": [
+      -3.7832934,
       40.4249366
     ]
   },
