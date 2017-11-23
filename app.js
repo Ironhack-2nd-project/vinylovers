@@ -17,7 +17,6 @@ const flash = require('connect-flash');
 const index = require('./routes/index');
 const auth = require('./routes/auth');
 const marketplace = require('./routes/marketplace');
-const marketplacebylocation = require('./routes/marketplacebylocation');
 const vinyl = require('./routes/vinyl');
 const user = require('./routes/user');
 
@@ -66,7 +65,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use ('/auth', auth);
 app.use ('/marketplace', marketplace);
-app.use ('/marketplacebylocation', marketplacebylocation);
 app.use('/vinyl', vinyl);
 app.use('/user',user);
 

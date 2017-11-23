@@ -10,9 +10,11 @@
 <body>
   <h1>Market Place</h1>
   <div>
-    <span>Filter results by distance in Km</span><input id="distance-slider" type="range" min="100" max="600" value="300" step="10" onchange="printValue('distance-slider','range-value')" />
-    <input id="range-value" type="number" value="300"/>
-    <button id="range-button" type="button" name="button">Search</button>
+    <form action="/marketplace" method="POST" id="form-container">
+    <span>Filter results by distance in Km</span><input id="distanceSlider" type="range" min="0" max="600" value="<%= maxDistance %>" step="10" />
+    <input id="rangevalue" type="number" name="rangevalue" min="0" max="600" value="<%= maxDistance %>"/>
+    <button name="button">Search</button>
+    </form>
   </div>
 <ul>
   <% vinyls.forEach((vinyl) => { %>
