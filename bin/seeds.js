@@ -240,7 +240,7 @@ User.create(user4)
       albumName: 'Sgt. Peppers Lonely Hearts Club Band',
       artistName: 'The Beatles',
       genre: 'Rock, Pop',
-      imgUrl: 'https://img.discogs.com/pKm5mGrvSjx5yCQjTswpWJwEL_8=/fit-in/600x603/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-2627660-1430943583-6611.jpeg.jpg',
+      imgUrl: 'https://images-na.ssl-images-amazon.com/images/I/61QEH5tSzbL._SS500.jpg',
       description: 'Limited edition, used',
       location: {
         "type": "Point",
@@ -335,3 +335,172 @@ User.create(user4)
               .then(() => mongoose.connection.close());
           })
           .catch(err => console.log(err));
+// User 9 info , 2 vinyls
+          const user9 = new User({
+            username: 'Ana Jules',
+            email: 'jules@gmail.com',
+            password: encryptedPass,
+            location: {
+              "type": "Point",
+              "coordinates": [
+                -3.7687216,
+                40.4213941
+              ]
+            },
+            imgUrl: 'http://lorempixel.com/100/100/people'
+          });
+
+          const vinyl10 = new Vinyl({
+            albumName: 'Mothership',
+            artistName: 'Led Zeppelin',
+            genre: 'Hard rock, Heavy metal',
+            imgUrl: 'http://www.progarchives.com/progressive_rock_discography_covers/2705/cover_437726112010.jpg',
+            description: 'Sealed ',
+            location: {
+              "type": "Point",
+              "coordinates": [
+                -3.7687216,
+                40.4213941
+              ]
+            },
+            price: 70
+          });
+
+          const vinyl11 = new Vinyl({
+            albumName: 'Bird with Strings',
+            artistName: 'Charlie Parker',
+            genre: 'Jazz',
+            imgUrl: 'https://img.discogs.com/cMsbPtn07_c8fcv5JpvW3ED6w78=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-7503301-1442833991-1208.jpeg.jpg',
+            description: 'Original',
+            location: {
+              "type": "Point",
+              "coordinates": [
+                -3.7687216,
+                40.4213941
+              ]
+            },
+            price: 150
+          });
+          User.create(user9)
+            .then(user => {
+              vinyl10.owner = user._id;
+              vinyl11.owner = user._id;
+              Vinyl.create(vinyl10)
+                .then(Vinyl.create(vinyl11)
+                  .then(() => mongoose.connection.close()));
+            })
+            .catch(err => console.log(err));
+// user 10
+            const user10 = new User({
+              username: 'Alberto',
+              email: 'alberto@gmail.com',
+              password: encryptedPass,
+              location: {
+                "type": "Point",
+                "coordinates": [
+                  -2.6742772,
+                  42.8464432
+                ]
+              },
+              imgUrl: 'http://lorempixel.com/100/100/people'
+            });
+
+            const vinyl12 = new Vinyl({
+              albumName: 'Celebration Day',
+              artistName: 'Led Zeppelin',
+              genre: 'Hard Rock',
+              imgUrl: 'https://i.pinimg.com/originals/02/b4/0f/02b40f6ee20f5614946a4ac99bf06c9c.jpg',
+              description: 'used remastered 2012 edition',
+              location: {
+                "type": "Point",
+                "coordinates": [
+                  -2.6742772,
+                  42.8464432
+                ]
+              },
+              price: 30
+            });
+
+            User.create(user10)
+              .then(user => {
+                vinyl12.owner = user._id;
+                Vinyl.create(viny12)
+                  .then(() => mongoose.connection.close());
+              })
+              .catch(err => console.log(err));
+
+              const user11 = new User({
+                username: 'Jonny',
+                email: 'jonny@gmail.com',
+                password: encryptedPass,
+                location: {
+                  "type": "Point",
+                  "coordinates": [
+                    -3.7712832,
+                    40.3912236
+                  ]
+                },
+                imgUrl: 'http://lorempixel.com/100/100/people'
+              });
+
+              const vinyl13 = new Vinyl({
+                albumName: 'Electric Warrior',
+                artistName: 'T. Rex',
+                genre: 'Glam Rock',
+                imgUrl: 'https://img.discogs.com/9G528p6O6ncz-U_V49hyHl0Zjis=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-451183-1384080656-2600.jpeg.jpg',
+                description: 'Original but used',
+                location: {
+                  "type": "Point",
+                  "coordinates": [
+                    -3.7712832,
+                    40.3912236
+                  ]
+                },
+                price: 120
+              });
+
+              User.create(user11)
+                .then(user => {
+                  vinyl13.owner = user._id;
+                  Vinyl.create(vinyl13)
+                    .then(() => mongoose.connection.close());
+                })
+                .catch(err => console.log(err));
+
+                const user12 = new User({
+                  username: 'Pepe',
+                  email: 'pepe@gmail.com',
+                  password: encryptedPass,
+                  location: {
+                    "type": "Point",
+                    "coordinates": [
+                      -3.7011569,
+                      40.3938903
+                    ]
+                  },
+                  imgUrl: 'http://lorempixel.com/100/100/people'
+                });
+
+                const vinyl14 = new Vinyl({
+                  albumName: 'Hot Rocks 1964-1971',
+                  artistName: 'The Rolling Stones',
+                  genre: 'Rock',
+                  imgUrl: 'https://is1-ssl.mzstatic.com/image/thumb/Music2/v4/72/a5/1f/72a51f8c-ec7a-a51d-0dbb-24c9086ad47c/UMG_cvrart_00018771895725_01_RGB72_1500x1500_13ABKIM00053.jpg/600x600bf.jpg',
+                  description: 'Sealed, remastered',
+                  location: {
+                    "type": "Point",
+                    "coordinates": [
+                      -3.7011569,
+                      40.3938903
+                    ]
+                  },
+                  price: 50
+                });
+
+                User.create(user12)
+                  .then(user => {
+                    vinyl14.owner = user._id;
+                    Vinyl.create(vinyl14)
+                      .then(() => mongoose.connection.close());
+                  })
+                  .catch(err => console.log(err));
