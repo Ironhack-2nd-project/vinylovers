@@ -22,12 +22,11 @@
         <p>Album: <%= vinyl.albumName %> by <%= vinyl.artistName %></p>
         <p>Genres: <%= vinyl.genre %></p>
         <p>Price: <%= vinyl.price %></p>
-        <a class="btn" type="button" href="vinyl/buy/<%= vinyl._id %>" name="button">Buy Vinyl</a>
         <p>Description: <%= vinyl.description %></p>
         <% if(user.money < vinyl.price){ %>
-          <spam> Not enough cash </spam>
+          <spam> You do not have enough money</spam>
         <% } else {%>
-          Buy vinyl
+          <a class="btn" type="button" href="vinyl/buy/<%= vinyl._id %>" name="button">Buy Vinyl</a>
           <%}%>
       </li>
       <hr>
