@@ -424,7 +424,7 @@ User.create(user4)
             User.create(user10)
               .then(user => {
                 vinyl12.owner = user._id;
-                Vinyl.create(viny12)
+                Vinyl.create(vinyl12)
                   .then(() => mongoose.connection.close());
               })
               .catch(err => console.log(err));
@@ -598,3 +598,59 @@ User.create(user4)
                             .then(() => mongoose.connection.close()));
                       })
                       .catch(err => console.log(err));
+//user 15
+                      const user15 = new User({
+                        username: 'Camila',
+                        email: 'cam@gmail.com',
+                        password: encryptedPass,
+                        location: {
+                          "type": "Point",
+                          "coordinates": [
+                          -3.7832934,
+                          40.4249366
+                        ]
+                        },
+                        imgUrl: 'http://lorempixel.com/100/100/people'
+                      });
+
+                      const vinyl18 = new Vinyl({
+                        albumName: 'Never Mind the Bollocks, Heres the Sex Pistols',
+                        artistName: 'Sex Pistols',
+                        genre: 'Punk rock',
+                        imgUrl: 'https://ssli.ebayimg.com/images/g/EYIAAOSwPpZZ~0Zk/s-l640.jpg',
+                        description: 'Limited Edition',
+                        location: {
+                          "type": "Point",
+                          "coordinates": [
+                            -3.7832934,
+                            40.4249366
+                          ]
+                        },
+                        price: 70
+                      });
+
+                      const vinyl19 = new Vinyl({
+                        albumName: 'Cheap Thrills',
+                        artistName: 'Big Brother and the Holding Company',
+                        genre: 'Psychedelic rock',
+                        imgUrl: 'http://cdn.shopify.com/s/files/1/0825/8349/products/Big_Brother_and_the_holding_company_cheap_thrills_vinyl_record_lpIMG_9724_grande.jpg?v=1472059954',
+                        description: 'Used, original, good conditions ',
+                        location: {
+                          "type": "Point",
+                          "coordinates": [
+                            -3.7832934,
+                            40.4249366
+                          ]
+                        },
+                        price: 50
+                      });
+
+                      User.create(user15)
+                        .then(user => {
+                          vinyl18.owner = user._id;
+                          vinyl19.owner = user._id;
+                          Vinyl.create(vinyl18)
+                            .then(Vinyl.create(vinyl19)
+                              .then(() => mongoose.connection.close()));
+                        })
+                        .catch(err => console.log(err));
