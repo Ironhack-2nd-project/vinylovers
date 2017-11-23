@@ -542,3 +542,59 @@ User.create(user4)
                         .then(() => mongoose.connection.close());
                     })
                     .catch(err => console.log(err));
+// user 14 to edit
+                    const user14 = new User({
+                      username: 'Victor',
+                      email: 'victor@gmail.com',
+                      password: encryptedPass,
+                      location: {
+                        "type": "Point",
+                        "coordinates": [
+                        -3.7905429,
+                        40.4222524
+                      ]
+                      },
+                      imgUrl: 'http://lorempixel.com/100/100/people'
+                    });
+
+                    const vinyl16 = new Vinyl({
+                      albumName: 'London Calling',
+                      artistName: 'The Clash',
+                      genre: 'Reggea',
+                      imgUrl: 'https://img.discogs.com/h68VySaLpts6mIomNT0rfpvLpIU=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-470912-1248752385.jpeg.jpg',
+                      description: 'New',
+                      location: {
+                        "type": "Point",
+                        "coordinates": [
+                          -3.7905429,
+                          40.4222524
+                        ]
+                      },
+                      price: 45
+                    });
+
+                    const vinyl17 = new Vinyl({
+                      albumName: 'Coexist',
+                      artistName: 'The XX',
+                      genre: 'Post-punk',
+                      imgUrl: 'https://img.discogs.com/vF9lQezMFNWjjNgZn5nDXx3Bir4=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-3855300-1410560930-6190.jpeg.jpg',
+                      description: 'New, remastered',
+                      location: {
+                        "type": "Point",
+                        "coordinates": [
+                          -3.7905429,
+                          40.4222524
+                        ]
+                      },
+                      price: 40
+                    });
+
+                    User.create(user14)
+                      .then(user => {
+                        vinyl16.owner = user._id;
+                        vinyl17.owner = user._id;
+                        Vinyl.create(vinyl16)
+                          .then(Vinyl.create(vinyl17)
+                            .then(() => mongoose.connection.close()));
+                      })
+                      .catch(err => console.log(err));
