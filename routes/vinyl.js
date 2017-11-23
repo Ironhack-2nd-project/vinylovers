@@ -75,7 +75,7 @@ router.get('/buy/:id', (req, res, next) => {
               .then((userAfterSelling) => console.log(`EL VENDEDOR DESPUÉS DE LA COMPRA TIENE: ${userAfterSelling.money} €`));
             })
             .then(res.redirect('/marketplace'));
-        } 
+        }
       });
       // .catch ((error) => {
       //   throw errtor;
