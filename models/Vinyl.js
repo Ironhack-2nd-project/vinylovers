@@ -8,8 +8,11 @@ const VinylSchema = new Schema({
   imgUrl: {type: String, required: true},
   description: {type: String, required: true},
   price: {type: Number, required: true},
+  location: { type: {type: String}, coordinates: [Number]},
   owner: {type: Schema.Types.ObjectId, ref: 'User', required: true},
 });
+
+VinylSchema.index({location:'2dsphere'});
 VinylSchema.set('timestamps', true);
 
 const Vinyl = mongoose.model('Vinyl', VinylSchema);

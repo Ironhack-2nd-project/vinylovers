@@ -33,6 +33,13 @@ const vinyl1 = new Vinyl({
   genre: 'Pop',
   imgUrl: 'https://is5-ssl.mzstatic.com/image/thumb/Music/5b/17/1b/mzi.gljnvqzc.tif/600x600bf.jpg',
   description: 'Sealed copy of remastered edition',
+  location: {
+    "type": "Point",
+    "coordinates": [
+      -0.3221189,
+      39.4786079
+    ]
+  },
   price: 40
 });
 
@@ -65,6 +72,13 @@ const vinyl2 = new Vinyl({
   genre: 'Rock',
   imgUrl: 'https://img.discogs.com/opltRShfrbknHcmXbOLcf0rU3WU=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-451342-1265844984.jpeg.jpg',
   description: 'First edition',
+  location: {
+    "type": "Point",
+    "coordinates": [
+      -3.75404,
+      40.4027785
+    ]
+  },
   price: 90
 });
 
@@ -74,6 +88,13 @@ const vinyl3 = new Vinyl({
   genre: 'Rock',
   imgUrl: 'https://img.discogs.com/2Siq-Y4cvleNxC8eFTL9k63qUCE=/fit-in/600x598/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-9437886-1480592395-1641.jpeg.jpg',
   description: 'First edition',
+  location: {
+    "type": "Point",
+    "coordinates": [
+      -3.75404,
+      40.4027785
+    ]
+  },
   price: 100
 });
 
@@ -107,6 +128,13 @@ const vinyl4 = new Vinyl({
   genre: 'Rock',
   imgUrl: 'https://img.discogs.com/TwWUUEhc7tKdHglqhRJurcY-NDc=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-4491548-1403429581-6990.jpeg.jpg',
   description: 'Worn copy of limited edition',
+  location: {
+    "type": "Point",
+    "coordinates": [
+      2.1679939,
+      41.3851341
+    ]
+  },
   price: 60
 });
 
@@ -138,6 +166,13 @@ const vinyl5 = new Vinyl({
   genre: 'Rock',
   imgUrl: 'https://img.discogs.com/TwWUUEhc7tKdHglqhRJurcY-NDc=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-4491548-1403429581-6990.jpeg.jpg',
   description: 'Sealed remastered 2010 edition',
+  location: {
+    "type": "Point",
+    "coordinates": [
+      -5.5688593,
+      42.5997032
+    ]
+  },
   price: 35
 });
 
