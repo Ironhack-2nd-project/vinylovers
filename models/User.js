@@ -7,7 +7,7 @@ const userSchema = new Schema({
   password: { type: String, required: true },
   location:{ type: {type: String}, coordinates: [Number]},
   money: { type: Number, required: true, default: 200 },
-  imgUrl: { type: String}
+  imgUrl: { type: String, default: "http://lorempixel.com/100/100/people"}
 });
 
 userSchema.set('timestamps', true);
