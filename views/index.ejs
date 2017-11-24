@@ -2,10 +2,25 @@
   <h1 class ="web-title">Vinylovers</h1>
   <h2 class= "web-description">Welcome to the best exchange for your old-time best records!</h2>
   <% if(!user){ %>
-    <ul>
-      <li class="login"><a href="/auth/login" class="login button" >Login</a></li>
-      <li class = "login"><a href="/auth/signup" class="login button">signup</a></li>
-    </ul>
+    <div class= "longin-btn-container">
+      <div class="type-1">
+        <div>
+          <a href="/auth/login" class="login-btn login-btn-1">
+            <span class="login-txt">Login</span>
+            <span class="round"><i class="fa fa-chevron-right"></i></span>
+          </a>
+        </div>
+      </div>
+        <div class="type-1">
+          <div>
+            <a href="/auth/signup" class="login-btn login-btn-1">
+              <span class="txt">Signup</span>
+              <span class="round"><i class="fa fa-chevron-right"></i></span>
+            </a>
+          </div>
+        </div>
+      </div>
+
   <% }else{ %>
       <a href="/marketplace">Market Place </a>
       <a href="/auth/logout">Logout <%= user.username %></a>

@@ -13,10 +13,12 @@ router.get('/', function(req, res, next) {
     .populate('owner')
     .then(vinyls => {
       console.log(req.user);
-      res.render('marketplace', {
-        currentuser: req.user,
-        vinyls: vinyls,
-        maxDistance : distance/1000
+      User.findById(req.user._id).then( user => {
+        res.render('marketplace', {
+          currentuser: user,
+          vinyls: vinyls,
+          maxDistance : distance/1000
+        });
       });
     });
 });
