@@ -12,6 +12,7 @@ body {
 .title-market-place {
     font-family: 'Shrikhand';
     color: white;
+    padding-top: .5em;
     font-size: 28px;
 }
 
@@ -28,7 +29,8 @@ h2 {
 
 .top-row {
   /*border: 1px dashed red;*/
-  padding-top: 2em;
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
   align-items: center;
   justify-content: space-around;
   display: flex;
@@ -37,6 +39,17 @@ h2 {
 .container {
   width: 100%;
   height: 100vh;
+}
+
+.album-container {
+  /*border: 1px dashed tomato;*/
+  display: flex;
+  padding-bottom: 6em;
+  /*border-bottom: 1px dashed grey;*/
+}
+
+.album-container li {
+  display: flex;
 }
 
 a {
@@ -86,6 +99,7 @@ color: white;
 font-family: Helvetica;
 background-color: black;
 }
+
 hr {
   margin-bottom: 30px;
 }
@@ -95,8 +109,12 @@ hr {
 }
 .cover {
   width: 300px;
+  height: 300px;
+  margin-right: 4em;
 }
+.owner-data {
 
+}
 .user-panel {
   height: 4em;
   /*background-color: grey;*/
@@ -117,19 +135,28 @@ a {
   margin-right: 1em;
 }
 
-ul, li {
-  list-style-type: none;
+.user-panel .avatar {
+  margin-right: 0;
 }
 
-.album-container {
-  padding-bottom: 2em;
-  border-bottom: 1px dashed grey;
+.buy-btn {
+  color: white;
+  background-color: #F27935;
+  width: 300px;
+  text-decoration: none;
+  padding: .5em 2em;
+  border-radius: 6px;
+}
+
+ul, li {
+  /*padding: none;*/
+  list-style-type: none;
 }
 
 .user {
   display: flex;
   align-items: center;
-  justify-content: center;
+  /*justify-content: center;*/
   margin-bottom: 1em;
 }
 

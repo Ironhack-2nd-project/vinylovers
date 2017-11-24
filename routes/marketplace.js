@@ -12,10 +12,9 @@ router.get('/', function(req, res, next) {
           } } } )
     .populate('owner')
     .then(vinyls => {
-      console.log("Vinyls filtered", vinyls);
-      console.log("Owner", vinyls.owner);
+      console.log(req.user);
       res.render('marketplace', {
-        currentuser: res.locals.user,
+        currentuser: req.user,
         vinyls: vinyls,
         maxDistance : distance/1000
       });

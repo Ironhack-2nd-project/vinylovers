@@ -10,10 +10,10 @@
 <body>
   <div class="marketplace-container">
     <div class="top-row">
-      <h1 class="title-market-place"> Market Place</h1>
+      <h1 class="title-market-place"> Marketplace</h1>
       <div class="range-form-container">
         <form action="/marketplace" method="POST" id="form-container">
-          <span>Filter results by distance in Km</span><input id="distanceSlider" type="range" min="0" max="600" value="<%= maxDistance %>" step="10" />
+          <span>Filter by distance in Km</span><input id="distanceSlider" type="range" min="0" max="600" value="<%= maxDistance %>" step="10" />
           <input id="rangevalue" type="number" name="rangevalue" min="0" max="600" value="<%= maxDistance %>"/>
           <button name="button">Search</button>
         </form>
@@ -28,26 +28,29 @@
     </div>
   <ul>
     <% vinyls.forEach((vinyl) => { %>
-      <div class="album-container">
+
         <li>
-          <div class="user">
-            <img class="avatar" src="<%= vinyl.owner.imgUrl %>" alt="">
-            <p class="username">Owner username: <%= vinyl.owner.username %></p>
-          </div>
+          <div class="album-container">
           <img class="cover" src="<%= vinyl.imgUrl %>" alt="Imagen del album">
-          <p>Album: <%= vinyl.albumName %> by <%= vinyl.artistName %></p>
-          <p>Genres: <%= vinyl.genre %></p>
-          <p>Price: <%= vinyl.price %>€</p>
-          <p>Description: <%= vinyl.description %></p>
-          <% if(user.money < vinyl.price){ %>
-            <spam> You do not have enough money</spam>
-          <% } else {%>
-            <a class="btn" type="button" href="vinyl/buy/<%= vinyl._id %>" name="button">Buy Vinyl</a>
-            <%}%>
+          <div class="owner-data">
+            <div class="user">
+              <img class="avatar" src="<%= vinyl.owner.imgUrl %>" alt="">
+              <p class="username">Owner username: <%= vinyl.owner.username %></p>
+            </div>
+            <p>Album: <%= vinyl.albumName %> by <%= vinyl.artistName %></p>
+            <p>Genres: <%= vinyl.genre %></p>
+            <p>Price: <%= vinyl.price %>€</p>
+            <p>Description: <%= vinyl.description %></p>
+            <% if(user.money < vinyl.price){ %>
+              <span> You do not have enough money</span>
+            <% } else {%>
+              <a class="btn buy-btn" type="button" href="vinyl/buy/<%= vinyl._id %>" name="button">Buy Vinyl</a>
+              <%}%>
+              </div>
+            </div>
         </li>
-      </div>
-  </ul>
     <% }) %>
+    </ul>
   </div>
 
 <script type="text/javascript" src="/javascripts/range.js"></script>

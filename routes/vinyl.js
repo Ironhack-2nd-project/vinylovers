@@ -70,7 +70,10 @@ router.get('/buy/:id', (req, res, next) => {
               console.log('DISCO ELIMINADO, AHORA ACTUALIZAMOS EL DINERO');
               console.log(buyerMoneyAfter);
               User.findByIdAndUpdate(buyerId, {$set : {money : buyerMoneyAfter}}, { new: true })
-              .then((userAfterBuying) => console.log(`EL USUARIO LOGEADO DESPUÉS DE LA COMPRA TIENE: ${userAfterBuying.money} €`));
+              .then((userAfterBuying) => {
+                req.user = userAfterBuying;
+                console.log(`EL USUARIO LOGEADO DESPUÉS DE LA COMPRA TIENE: ${res.locals.user.money} €`);
+              });
               User.findByIdAndUpdate(seller, {$set : {money : sellerMoneyAfter}}, { new: true })
               .then((userAfterSelling) => console.log(`EL VENDEDOR DESPUÉS DE LA COMPRA TIENE: ${userAfterSelling.money} €`));
             })

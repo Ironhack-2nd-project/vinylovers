@@ -38,7 +38,7 @@ app.locals.title = 'Express - Generated with IronGenerator';
 
 //app.js
 app.use(session({
-  secret: "our-passport-local-strategy-app",
+  secret: process.env.SECRET,
   resave: true,
   saveUninitialized: true
 }));
