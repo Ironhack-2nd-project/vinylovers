@@ -8,6 +8,13 @@ body {
 .container {
   padding: 2em;
 }
+
+.title-market-place {
+    font-family: 'Shrikhand';
+    color: white;
+    font-size: 28px;
+}
+
 h1 {
   margin-top: 0;
 }

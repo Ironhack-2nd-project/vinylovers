@@ -20,9 +20,9 @@
       </div>
       <div class="user-panel user">
         <img class="avatar" src="<%= currentuser.imgUrl %>" alt="">
-        <span><%= currentuser.username %></span>
+        <a href="user/edit"><span><%= currentuser.username %></span></a>
         <span>Money: <%= currentuser.money %>€</span>
-        <span><a href="vinyl/add">Sell vinyl</a></span>
+        <span><a href="vinyl/add">Add vinyl</a></span>
         <span><a href="/auth/logout">Logout</a></span>
       </div>
     </div>
